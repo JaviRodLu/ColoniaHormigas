@@ -12,16 +12,25 @@ public class HormigaObrera extends Hormiga{
         }
     }
         
+    @Override
     public void run() {
         int num = this.getNum();
         System.out.println("¡Hola! Soy la hormiga obrera " + num);
+        this.getC().cruzarTunelEntrada(this);
         if (num % 2 == 0) {
             while (true) {
                 
             }
         } else {
             while (true) {
-                
+                //this.getC().cruzarTunelSalida(this);
+                for (int i = 0; i < 5; i++) {
+                    this.getC().recogerComida(this);
+                }
+                this.getC().entrarAlmacenComida(this);
+                for (int i = 0; i < 5; i++) {
+                    this.getC().dejarComida(this);
+                }
             }
         }
     }

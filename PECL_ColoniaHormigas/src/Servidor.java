@@ -1,3 +1,9 @@
+
+import static java.lang.Thread.sleep;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +14,55 @@
  * @author javi
  */
 public class Servidor extends javax.swing.JFrame {
+    Colonia c;
 
     /**
      * Creates new form Servidor
      */
     public Servidor() {
         initComponents();
+        c = new Colonia(jTextFieldHormigasBuscandoComida, jTextFieldHormigasRepeliendoInsecto,
+                jTextFieldHormigasAlmacen, jTextFieldHormigasLlevandoComida, 
+                jTextFieldHormigasHaciendoInstruccion,
+                jTextFieldHormigasDescansando, jTextFieldComidaAlmacen, 
+                jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldRefugio);
+        
+        Random r = new Random();
+        
+        int numObrera = 1;
+        int numSoldado = 1;
+        int numCria = 1;
+        int numHormigas = 0;
+
+        for (int i = 1; i < 15; i++) {
+            try {
+                sleep(r.nextInt(800, 3501));
+                if (i % 3 == 0) { // ¿Cómo hacer para crear una soldado y una cría cada tres obreras?
+                    if (numSoldado <= 2) {
+                        HormigaSoldado hs = new HormigaSoldado(numSoldado, c);
+                        hs.start();
+                        numSoldado++;
+                        numHormigas++;
+                    }
+                    if (numCria <= 2) {
+                        HormigaCria hc = new HormigaCria(numCria, c);
+                        hc.start();
+                        numCria++;
+                        numHormigas++;
+                    }
+                } else {
+                    if (numObrera <= 10) {
+                        HormigaObrera ho = new HormigaObrera(numObrera, c);
+                        ho.start();
+                        numObrera++;
+                        numHormigas++;
+                    }
+                }
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
     }
 
     /**
@@ -46,7 +95,7 @@ public class Servidor extends javax.swing.JFrame {
         jLabelComidaZonaComer = new javax.swing.JLabel();
         jLabelZonaComer = new javax.swing.JLabel();
         jTextFieldComidaAlmacen = new javax.swing.JTextField();
-        jTextFieldZonaParaComer = new javax.swing.JTextField();
+        jTextFieldComidaZonaComer = new javax.swing.JTextField();
         jTextFieldZonaComer = new javax.swing.JTextField();
         jLabelRefugio = new javax.swing.JLabel();
         jTextFieldRefugio = new javax.swing.JTextField();
@@ -67,8 +116,18 @@ public class Servidor extends javax.swing.JFrame {
         });
 
         jButtonReanudar.setText("Reanudar");
+        jButtonReanudar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReanudarActionPerformed(evt);
+            }
+        });
 
         jButtonGenerarAmenaza.setText("Generar Amenaza Insecto Invasor");
+        jButtonGenerarAmenaza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGenerarAmenazaActionPerformed(evt);
+            }
+        });
 
         jLabelHormigasBuscandoComida.setText("Hormigas buscando comida");
 
@@ -77,12 +136,6 @@ public class Servidor extends javax.swing.JFrame {
         jLabelHormigasAlmacen.setText("Hormigas en el ALMACÉN DE COMIDA");
 
         jLabelHormigasLlevandoComida.setText("Hormigas llevando comida a la ZONA PARA COMER");
-
-        jTextFieldHormigasLlevandoComida.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldHormigasLlevandoComidaActionPerformed(evt);
-            }
-        });
 
         jLabelHormigasHaciendoInstruccion.setText("Hormigas haciendo INSTRUCCIÓN");
 
@@ -122,7 +175,7 @@ public class Servidor extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jLabelComidaZonaComer)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldZonaParaComer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextFieldComidaZonaComer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createSequentialGroup()
@@ -200,7 +253,7 @@ public class Servidor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelComidaZonaComer)
-                    .addComponent(jTextFieldZonaParaComer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldComidaZonaComer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldZonaComer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,14 +277,18 @@ public class Servidor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonDetenerActionPerformed
 
-    private void jTextFieldHormigasLlevandoComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHormigasLlevandoComidaActionPerformed
+    private void jButtonReanudarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReanudarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldHormigasLlevandoComidaActionPerformed
+    }//GEN-LAST:event_jButtonReanudarActionPerformed
+
+    private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -261,6 +318,7 @@ public class Servidor extends javax.swing.JFrame {
                 new Servidor().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -280,6 +338,7 @@ public class Servidor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelRefugio;
     private javax.swing.JLabel jLabelZonaComer;
     private javax.swing.JTextField jTextFieldComidaAlmacen;
+    private javax.swing.JTextField jTextFieldComidaZonaComer;
     private javax.swing.JTextField jTextFieldHormigasAlmacen;
     private javax.swing.JTextField jTextFieldHormigasBuscandoComida;
     private javax.swing.JTextField jTextFieldHormigasDescansando;
@@ -288,6 +347,5 @@ public class Servidor extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldHormigasRepeliendoInsecto;
     private javax.swing.JTextField jTextFieldRefugio;
     private javax.swing.JTextField jTextFieldZonaComer;
-    private javax.swing.JTextField jTextFieldZonaParaComer;
     // End of variables declaration//GEN-END:variables
 }

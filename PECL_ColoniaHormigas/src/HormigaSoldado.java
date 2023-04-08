@@ -12,9 +12,14 @@ public class HormigaSoldado extends Hormiga {
         }
     }
     
+    @Override
     public void run() {
         int num = this.getNum();
         System.out.println("¡Hola! Soy la hormiga soldado " + num);
+        this.getC().cruzarTunelEntrada(this);
+        while (true) {
+            this.getC().zonaInstruccion(this);
+        }
     }
     
 }

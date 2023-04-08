@@ -13,9 +13,11 @@ public class HormigaCria extends Hormiga {
         }
     }
         
+    @Override
     public void run() {
         int num = this.getNum();
         System.out.println("¡Hola! Soy la hormiga cría " + num);
+        this.getC().cruzarTunelEntrada(this);
     }
     
 }

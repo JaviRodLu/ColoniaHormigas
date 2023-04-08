@@ -46,7 +46,7 @@
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="jLabelComidaZonaComer" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextFieldZonaParaComer" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldComidaZonaComer" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -149,7 +149,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelComidaZonaComer" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldZonaParaComer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldComidaZonaComer" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -201,11 +201,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Reanudar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonReanudarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonGenerarAmenaza">
       <Properties>
         <Property name="text" type="java.lang.String" value="Generar Amenaza Insecto Invasor"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonGenerarAmenazaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelHormigasBuscandoComida">
       <Properties>
@@ -234,9 +240,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldHormigasLlevandoComida">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldHormigasLlevandoComidaActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelHormigasHaciendoInstruccion">
       <Properties>
@@ -269,7 +272,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldComidaAlmacen">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldZonaParaComer">
+    <Component class="javax.swing.JTextField" name="jTextFieldComidaZonaComer">
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldZonaComer">
     </Component>
