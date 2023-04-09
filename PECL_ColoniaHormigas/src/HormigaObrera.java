@@ -19,15 +19,18 @@ public class HormigaObrera extends Hormiga{
         this.getC().cruzarTunelEntrada(this);
         if (num % 2 == 0) {
             while (true) {
-                
+                this.getC().entrarAlmacenComidaPar(this);
+                for (int i = 0; i < 5; i++) {
+                    this.getC().cogerComidaParaComer(this);
+                    this.getC().viajarZonaComer(this);
+                    this.getC().depositarComida(this);
+                }
             }
         } else {
             while (true) {
                 //this.getC().cruzarTunelSalida(this);
-                for (int i = 0; i < 5; i++) {
-                    this.getC().recogerComida(this);
-                }
-                this.getC().entrarAlmacenComida(this);
+                this.getC().salirPorComida(this);
+                this.getC().entrarAlmacenComidaImpar(this);
                 for (int i = 0; i < 5; i++) {
                     this.getC().dejarComida(this);
                 }

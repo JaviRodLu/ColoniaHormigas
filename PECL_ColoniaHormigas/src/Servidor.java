@@ -34,7 +34,7 @@ public class Servidor extends javax.swing.JFrame {
         int numCria = 1;
         int numHormigas = 0;
 
-        for (int i = 1; i < 15; i++) {
+        for (int i = 1; i < 6; i++) {
             try {
                 sleep(r.nextInt(800, 3501));
                 if (i % 3 == 0) { // ¿Cómo hacer para crear una soldado y una cría cada tres obreras?
@@ -51,7 +51,7 @@ public class Servidor extends javax.swing.JFrame {
                         numHormigas++;
                     }
                 } else {
-                    if (numObrera <= 10) {
+                    if (numObrera <= 2) {
                         HormigaObrera ho = new HormigaObrera(numObrera, c);
                         ho.start();
                         numObrera++;
@@ -164,18 +164,29 @@ public class Servidor extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabelZonaComer)
+                                            .addComponent(jLabelRefugio))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextFieldRefugio)
+                                            .addComponent(jTextFieldZonaComer)))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabelHormigasDescansando)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextFieldHormigasDescansando, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(77, 179, Short.MAX_VALUE)
-                                        .addComponent(jLabelComidaAlmacen)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldComidaAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabelComidaZonaComer)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldComidaZonaComer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(142, 142, 142)
+                                                .addComponent(jLabelComidaAlmacen)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jTextFieldComidaAlmacen, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addGap(69, 69, 69)
+                                                .addComponent(jLabelComidaZonaComer)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jTextFieldComidaZonaComer))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createSequentialGroup()
@@ -198,16 +209,7 @@ public class Servidor extends javax.swing.JFrame {
                                                 .addComponent(jLabelHormigasLlevandoComida)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(jTextFieldHormigasLlevandoComida)))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabelZonaComer)
-                                            .addComponent(jLabelRefugio))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldRefugio)
-                                            .addComponent(jTextFieldZonaComer))))))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
                         .addGap(73, 73, 73))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButtonDetener)
