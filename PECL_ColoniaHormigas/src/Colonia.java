@@ -6,17 +6,12 @@ import java.util.logging.Logger;
 import javax.swing.JTextField;
 
 public class Colonia {
-    private static final Semaphore semaforoAlmacenComida = new Semaphore(10);
-    private static final Semaphore semaforoZonaComer = new Semaphore(1);
-    private static final Semaphore semaforoZonaDescanso = new Semaphore(1);
-    private static final Semaphore tunelEntrada = new Semaphore(1);
-    private static final Semaphore tunelSalida1 = new Semaphore(1);
-    private static final Semaphore tunelSalida2 = new Semaphore(1);
-    private static final Random random = new Random();
-    private Lock almacenComida = new ReentrantLock();
-    private Lock zonaComer = new ReentrantLock();
-    private int unidadesComidaAlmacen = 0;
-    private int unidadesComidaComer = 0;
+    private Semaphore semaforoAlmacenComida, semaforoZonaComer, semaforoZonaDescanso, 
+            tunelEntrada, tunelSalida1, tunelSalida2;
+    private Random r;
+    private Lock almacenComida, zonaComer;
+    private Condition sinComidaAlmacen, sinComidaComer;
+    private int unidadesComidaAlmacen, unidadesComidaComer;
     
     private ListaThreads listaHormigasBuscandoComida, listaHormigasRepeliendoInsecto,
             listaHormigasAlmacen, listaHormigasLlevandoComida, listaHormigasHaciendoInstruccion,
@@ -27,6 +22,20 @@ public class Colonia {
     public Colonia(JTextField buscandoComida, JTextField repeliendoInsecto, JTextField hormigasAlmacen,
             JTextField hormigasLlevandoComida, JTextField hormigasHaciendoInstruccion, JTextField hormigasDescansando,
             JTextField unidadesAlmacen, JTextField unidadesZonaComer, JTextField hormigasZonaComer, JTextField hormigasRefugio) {
+        this.semaforoAlmacenComida = new Semaphore(10);
+        this.semaforoZonaComer = new Semaphore(1);
+        this.semaforoZonaDescanso = new Semaphore(1);
+        this.tunelEntrada = new Semaphore(1);
+        this.tunelSalida1 = new Semaphore(1);
+        this.tunelSalida2 = new Semaphore(1);
+        this.r = new Random();
+        this.almacenComida = new ReentrantLock();
+        this.zonaComer = new ReentrantLock();
+        this.sinComidaAlmacen = almacenComida.newCondition();
+        this.sinComidaComer = zonaComer.newCondition();
+        this.unidadesComidaAlmacen = 0;
+        this.unidadesComidaComer = 0;
+        
         this.listaHormigasBuscandoComida = new ListaThreads(buscandoComida);
         this.listaHormigasRepeliendoInsecto = new ListaThreads(repeliendoInsecto);
         this.listaHormigasAlmacen = new ListaThreads(hormigasAlmacen);
@@ -110,7 +119,7 @@ public class Colonia {
             semaforoAlmacenComida.acquire();
             listaHormigasAlmacen.meter(h);
             System.out.println("La hormiga " + h.getIdentificador() + " entra al almacén de comida");
-            Thread.sleep(random.nextInt(2000,4001));
+            Thread.sleep(r.nextInt(2000,4001));
         } catch (InterruptedException ex) {
             
         } finally {
@@ -125,6 +134,7 @@ public class Colonia {
             unidadesComidaAlmacen++;
             System.out.println("Unidades de comida: " + unidadesComidaAlmacen);
             comidaAlmacen.setText(unidadesComidaAlmacen + "");
+            sinComidaAlmacen.signalAll();
         } finally {
             almacenComida.unlock();
         }
@@ -135,7 +145,7 @@ public class Colonia {
             semaforoAlmacenComida.acquire();
             listaHormigasAlmacen.meter(h);
             System.out.println("La hormiga " + h.getIdentificador() + " entra al almacén de comida");
-            Thread.sleep(random.nextInt(1000,2001));
+            Thread.sleep(r.nextInt(1000,2001));
         } catch (InterruptedException ex) {
             
         } finally {
@@ -148,9 +158,14 @@ public class Colonia {
         //ARREGLAR TODO ESTO
         almacenComida.lock();
         try {
+            if (unidadesComidaAlmacen == 0) {
+                sinComidaAlmacen.await();
+            }
             unidadesComidaAlmacen--;
             System.out.println("Unidades de comida: " + unidadesComidaAlmacen);
             comidaAlmacen.setText(unidadesComidaAlmacen + "");
+        } catch (InterruptedException ex) {
+        
         } finally {
             almacenComida.unlock();
         }
@@ -159,7 +174,7 @@ public class Colonia {
     public void viajarZonaComer (Hormiga h) {
         try {
             listaHormigasLlevandoComida.meter(h);
-            Thread.sleep(random.nextInt(1000,3001));
+            Thread.sleep(r.nextInt(1000,3001));
             listaHormigasLlevandoComida.sacar(h);
         } catch (InterruptedException ex) {
             Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
@@ -169,7 +184,7 @@ public class Colonia {
     public void depositarComida (Hormiga h) {
         zonaComer.lock();
         try {
-            Thread.sleep(random.nextInt(1000,2001));
+            Thread.sleep(r.nextInt(1000,2001));
             unidadesComidaComer++;
             comidaZonaComer.setText(unidadesComidaComer + "");
         } catch (InterruptedException ex) {
@@ -184,7 +199,7 @@ public class Colonia {
         try {
             System.out.println("La hormiga " + h.getIdentificador() + " entra en la zona de instrucción.");
             listaHormigasHaciendoInstruccion.meter(h);
-            Thread.sleep(random.nextInt(2000, 8001));
+            Thread.sleep(r.nextInt(2000, 8001));
             System.out.println("La hormiga " + h.getIdentificador() + " sale de la zona de instrucción.");
             listaHormigasHaciendoInstruccion.sacar(h);
         } catch (InterruptedException ex) {
