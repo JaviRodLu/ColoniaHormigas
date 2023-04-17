@@ -141,6 +141,7 @@ public class Colonia {
     }
     
     public void entrarAlmacenComidaPar(Hormiga h) {
+        // ¡CUIDADO! Mirar que hay comida disponible antes de entrar en el almacén, no solo el aforo
         try {
             semaforoAlmacenComida.acquire();
             listaHormigasAlmacen.meter(h);
@@ -184,9 +185,10 @@ public class Colonia {
     public void depositarComida (Hormiga h) {
         zonaComer.lock();
         try {
-            Thread.sleep(r.nextInt(1000,2001));
             unidadesComidaComer++;
             comidaZonaComer.setText(unidadesComidaComer + "");
+            Thread.sleep(r.nextInt(1000,2001));
+            sinComidaComer.signalAll();
         } catch (InterruptedException ex) {
             
         } finally {
@@ -210,7 +212,6 @@ public class Colonia {
     // REFUGIO
     public void zonaRefugio (Hormiga h) {
         listaRefugio.meter(h);
-        
     }
     
     // ZONA DE COMER
