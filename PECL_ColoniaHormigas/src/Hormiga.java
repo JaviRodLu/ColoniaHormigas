@@ -1,11 +1,14 @@
 public class Hormiga extends Thread {
+
     private String identificador;
     private int num;
     private Colonia c;
+    private Paso paso;
 
-    public Hormiga(int num, Colonia colonia) {
+    public Hormiga(int num, Colonia colonia, Paso p) {
         this.num = num;
         this.c = colonia;
+        this.paso = p;
     }
 
     public String getIdentificador() {
@@ -30,6 +33,14 @@ public class Hormiga extends Thread {
 
     public void setC(Colonia c) {
         this.c = c;
+    }
+
+    public Paso getPaso() {
+        return paso;
+    }
+
+    public void setPaso(Paso paso) {
+        this.paso = paso;
     }
     
 }

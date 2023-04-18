@@ -8,13 +8,14 @@ import java.util.logging.Logger;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author javi
  */
 public class Servidor extends javax.swing.JFrame {
+
     Colonia c;
+    Paso paso;
 
     /**
      * Creates new form Servidor
@@ -22,47 +23,51 @@ public class Servidor extends javax.swing.JFrame {
     public Servidor() {
         initComponents();
         c = new Colonia(jTextFieldHormigasBuscandoComida, jTextFieldHormigasRepeliendoInsecto,
-                jTextFieldHormigasAlmacen, jTextFieldHormigasLlevandoComida, 
+                jTextFieldHormigasAlmacen, jTextFieldHormigasLlevandoComida,
                 jTextFieldHormigasHaciendoInstruccion,
-                jTextFieldHormigasDescansando, jTextFieldComidaAlmacen, 
+                jTextFieldHormigasDescansando, jTextFieldComidaAlmacen,
                 jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldRefugio);
-        
-        Random r = new Random();
-        
-        int numObrera = 1;
-        int numSoldado = 1;
-        int numCria = 1;
-        int numHormigas = 0;
+        paso = new Paso();
 
-        for (int i = 1; i < 6; i++) {
-            try {
+        new Thread(new Runnable() {
+            Random r = new Random();
+        
+            int numObrera = 1;
+            int numSoldado = 1;
+            int numCria = 1;
+            int numHormigas = 0;
+            @Override
+            public void run() {
+                while (numHormigas < 5) {
+                try {
+                HormigaObrera ho1 = new HormigaObrera(numObrera, c, paso);
+                ho1.start();
+                numObrera++;
                 sleep(r.nextInt(800, 3501));
-                if (i % 3 == 0) { // ¿Cómo hacer para crear una soldado y una cría cada tres obreras?
-                    if (numSoldado <= 2) {
-                        HormigaSoldado hs = new HormigaSoldado(numSoldado, c);
-                        hs.start();
-                        numSoldado++;
-                        numHormigas++;
-                    }
-                    if (numCria <= 2) {
-                        HormigaCria hc = new HormigaCria(numCria, c);
-                        hc.start();
-                        numCria++;
-                        numHormigas++;
-                    }
-                } else {
-                    if (numObrera <= 2) {
-                        HormigaObrera ho = new HormigaObrera(numObrera, c);
-                        ho.start();
-                        numObrera++;
-                        numHormigas++;
-                    }
-                }
+                HormigaObrera ho2 = new HormigaObrera(numObrera, c, paso);
+                ho2.start();
+                numObrera++;
+                sleep(r.nextInt(800, 3501));
+                HormigaObrera ho3 = new HormigaObrera(numObrera, c, paso);
+                ho3.start();
+                numObrera++;
+                sleep(r.nextInt(800, 3501));
+                HormigaSoldado hs = new HormigaSoldado(numSoldado, c, paso);
+                hs.start();
+                numSoldado++;
+                sleep(r.nextInt(800, 3501));
+                HormigaCria hc = new HormigaCria(numCria, c, paso);
+                hc.start();
+                numCria++;
+                sleep(r.nextInt(800, 3501));
+                numHormigas += 5;
             } catch (InterruptedException ex) {
                 Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
+            }
+            }
+                    
+        }).start();
     }
 
     /**
@@ -277,10 +282,12 @@ public class Servidor extends javax.swing.JFrame {
 
     private void jButtonDetenerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDetenerActionPerformed
         // TODO add your handling code here:
+        paso.cerrar();
     }//GEN-LAST:event_jButtonDetenerActionPerformed
 
     private void jButtonReanudarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReanudarActionPerformed
         // TODO add your handling code here:
+        paso.abrir();
     }//GEN-LAST:event_jButtonReanudarActionPerformed
 
     private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed

@@ -1,6 +1,6 @@
 public class HormigaSoldado extends Hormiga {
-    public HormigaSoldado(int num, Colonia colonia) {
-        super(num, colonia);
+    public HormigaSoldado(int num, Colonia colonia, Paso paso) {
+        super(num, colonia, paso);
         if (num < 10) {
             this.setIdentificador("HS000" + num);
         } else if (num < 100) {
@@ -15,10 +15,17 @@ public class HormigaSoldado extends Hormiga {
     @Override
     public void run() {
         int num = this.getNum();
-        System.out.println("¡Hola! Soy la hormiga soldado " + num);
+        this.getPaso().mirar();
         this.getC().cruzarTunelEntrada(this);
         while (true) {
-            this.getC().zonaInstruccion(this);
+            for (int i = 0; i < 6; i++) {
+                this.getPaso().mirar();
+                this.getC().zonaInstruccion(this);
+                this.getPaso().mirar();
+                this.getC().zonaDescansoSoldado(this);
+            }
+            this.getPaso().mirar();
+            this.getC().zonaComer(this);
         }
     }
     

@@ -1,6 +1,8 @@
-public class HormigaObrera extends Hormiga{
-    public HormigaObrera(int num, Colonia colonia) {
-        super(num, colonia);
+
+public class HormigaObrera extends Hormiga {
+
+    public HormigaObrera(int num, Colonia colonia, Paso paso) {
+        super(num, colonia, paso);
         if (num < 10) {
             this.setIdentificador("HO000" + num);
         } else if (num < 100) {
@@ -11,31 +13,53 @@ public class HormigaObrera extends Hormiga{
             this.setIdentificador("HO" + num);
         }
     }
-        
+
     @Override
     public void run() {
         int num = this.getNum();
-        System.out.println("¡Hola! Soy la hormiga obrera " + num);
+        this.getPaso().mirar();
         this.getC().cruzarTunelEntrada(this);
         if (num % 2 == 0) {
             while (true) {
-                this.getC().entrarAlmacenComidaPar(this);
-                for (int i = 0; i < 5; i++) {
-                    this.getC().cogerComidaParaComer(this);
+                for (int i = 0; i < 10; i++) {
+                    this.getPaso().mirar();
+                    this.getC().entrarAlmacenComidaPar(this);
+                    for (int j = 0; j < 5; j++) {
+                        this.getPaso().mirar();
+                        this.getC().cogerComidaParaComer(this);
+                    }
+                    this.getPaso().mirar();
                     this.getC().viajarZonaComer(this);
-                    this.getC().depositarComida(this);
+                    for (int j = 0; j < 5; j++) {
+                        this.getPaso().mirar();
+                        this.getC().depositarComida(this);
+                    }
                 }
+                this.getPaso().mirar();
+                this.getC().zonaComer(this);
+                this.getPaso().mirar();
+                this.getC().zonaDescansoObrera(this);
             }
         } else {
             while (true) {
-                //this.getC().cruzarTunelSalida(this);
-                this.getC().salirPorComida(this);
-                this.getC().entrarAlmacenComidaImpar(this);
-                for (int i = 0; i < 5; i++) {
-                    this.getC().dejarComida(this);
+                for (int i = 0; i < 10; i++) {
+                    this.getPaso().mirar();
+                    //this.getC().cruzarTunelSalida(this);
+                    this.getPaso().mirar();
+                    this.getC().salirPorComida(this);
+                    this.getPaso().mirar();
+                    this.getC().entrarAlmacenComidaImpar(this);
+                    for (int j = 0; j < 5; j++) {
+                        this.getPaso().mirar();
+                        this.getC().dejarComida(this);
+                    }
                 }
+                this.getPaso().mirar();
+                this.getC().zonaComer(this);
+                this.getPaso().mirar();
+                this.getC().zonaDescansoObrera(this);
             }
         }
     }
-    
+
 }

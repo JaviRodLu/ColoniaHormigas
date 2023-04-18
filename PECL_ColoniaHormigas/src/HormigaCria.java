@@ -1,7 +1,7 @@
 public class HormigaCria extends Hormiga {
 
-    public HormigaCria(int num, Colonia colonia) {
-        super(num, colonia);
+    public HormigaCria(int num, Colonia colonia, Paso paso) {
+        super(num, colonia, paso);
         if (num < 10) {
             this.setIdentificador("HC000" + num);
         } else if (num < 100) {
@@ -16,8 +16,14 @@ public class HormigaCria extends Hormiga {
     @Override
     public void run() {
         int num = this.getNum();
-        System.out.println("¡Hola! Soy la hormiga cría " + num);
+        this.getPaso().mirar();
         this.getC().cruzarTunelEntrada(this);
+        while(true) {
+            this.getPaso().mirar();
+            this.getC().zonaComerCria(this);
+            this.getPaso().mirar();
+            this.getC().zonaDescansoCria(this);
+        }
     }
     
 }

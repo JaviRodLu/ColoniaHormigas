@@ -103,7 +103,6 @@ public class Colonia {
         }
     }
 
-    
     public void recogerComida(Hormiga h) {
         try {
             Thread.sleep(4000);
@@ -186,12 +185,12 @@ public class Colonia {
         zonaComer.lock();
         try {
             unidadesComidaComer++;
-            comidaZonaComer.setText(unidadesComidaComer + "");
             Thread.sleep(r.nextInt(1000,2001));
+            comidaZonaComer.setText(unidadesComidaComer + "");
             sinComidaComer.signalAll();
         } catch (InterruptedException ex) {
-            
-        } finally {
+            Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
             zonaComer.unlock();
         }
     }
@@ -219,12 +218,82 @@ public class Colonia {
         
     }
     
-    public void zonaComerObrera (Hormiga h) {
-        
+    public void zonaComer (Hormiga h) {
+        // Para las hormigas Obrera y Soldado
+        listaZonaComer.meter(h);
+        zonaComer.lock();
+        try {
+            unidadesComidaComer--;
+            comidaZonaComer.setText(unidadesComidaComer + "");
+            
+        } finally {
+            zonaComer.unlock();
+        }
+        try {
+            System.out.println("La hormiga " + h.getIdentificador() + " come" );
+            Thread.sleep(3000);
+            System.out.println("La hormiga" + h.getIdentificador() + " termina de comer");
+            listaZonaComer.sacar(h);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    
-    
+    public void zonaComerCria (Hormiga h) {
+        // Para las hormigas Cría
+        listaZonaComer.meter(h);
+        zonaComer.lock();
+        try {
+            unidadesComidaComer--;
+            comidaZonaComer.setText(unidadesComidaComer + "");
+        } finally {
+            zonaComer.unlock();
+        }
+        try {
+            System.out.println("La hormiga " + h.getIdentificador() + " come" );
+            Thread.sleep(r.nextInt(3000, 5001));
+            System.out.println("La hormiga" + h.getIdentificador() + " termina de comer");
+            listaZonaComer.sacar(h);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     // ZONA DE DESCANSO
+    public void zonaDescansoObrera(Hormiga h) {
+        try {
+            listaHormigasDescansando.meter(h);
+            System.out.println("La hormiga " + h.getIdentificador() + " entra en la zona de descanso");
+            Thread.sleep(1000);
+            listaHormigasDescansando.sacar(h);
+            System.out.println("La hormiga " + h.getIdentificador() + " sale de la zona de descanso");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void zonaDescansoSoldado(Hormiga h) {
+        try {
+            listaHormigasDescansando.meter(h);
+            System.out.println("La hormiga " + h.getIdentificador() + " entra en la zona de descanso");
+            Thread.sleep(2000);
+            listaHormigasDescansando.sacar(h);
+            System.out.println("La hormiga " + h.getIdentificador() + " sale de la zona de descanso");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void zonaDescansoCria(Hormiga h) {
+        try {
+            listaHormigasDescansando.meter(h);
+            System.out.println("La hormiga " + h.getIdentificador() + " entra en la zona de descanso");
+            Thread.sleep(4000);
+            listaHormigasDescansando.sacar(h);
+            System.out.println("La hormiga " + h.getIdentificador() + " sale de la zona de descanso");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }
