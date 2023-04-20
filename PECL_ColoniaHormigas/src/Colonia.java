@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,6 +15,10 @@ public class Colonia {
     private Lock almacenComida, zonaComer;
     private Condition sinComidaAlmacen, sinComidaComer;
     private int unidadesComidaAlmacen, unidadesComidaComer;
+    //private CyclicBarrier hormigasLuchando;
+    //private AtomicBoolean invasorDetectado;
+    private ArrayList<HormigaSoldado> listaHormigasSoldado;
+    private ArrayList<HormigaCria> listaHormigasCria;
     
     private ListaThreads listaHormigasBuscandoComida, listaHormigasRepeliendoInsecto,
             listaHormigasAlmacen, listaHormigasLlevandoComida, listaHormigasHaciendoInstruccion,
@@ -35,6 +42,9 @@ public class Colonia {
         this.sinComidaComer = zonaComer.newCondition();
         this.unidadesComidaAlmacen = 0;
         this.unidadesComidaComer = 0;
+        //this.invasorDetectado = new AtomicBoolean(false);
+        this.listaHormigasSoldado = new ArrayList<>();
+        this.listaHormigasCria = new ArrayList<>();
         
         this.listaHormigasBuscandoComida = new ListaThreads(buscandoComida);
         this.listaHormigasRepeliendoInsecto = new ListaThreads(repeliendoInsecto);
@@ -47,12 +57,20 @@ public class Colonia {
         this.listaZonaComer = new ListaThreads(hormigasZonaComer);
         this.listaRefugio = new ListaThreads(hormigasRefugio);
     }
-    
-    
+
     // Constantes de tiempo
     
+    // Getter y Setter para los ArrayList
+    public ArrayList<HormigaCria> getListaHormigasCria() {
+        return listaHormigasCria;
+    }
+    
+    public ArrayList<HormigaSoldado> getListaHormigasSoldado () {
+        return listaHormigasSoldado;
+    }
+
     // Métodos para entrar y salir de la Colonia
-    public void cruzarTunelEntrada (Hormiga h) {
+    public void cruzarTunelEntrada(Hormiga h) {
         /**
          * Este método simula el acceso de una hormiga a la colonia
          */
@@ -295,5 +313,36 @@ public class Colonia {
             Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    //AMENAZA INSECTO INVASOR
+    /*public void reunirHormigas(int numHormigasSoldado) {
+        this.hormigasLuchando = new CyclicBarrier(numHormigasSoldado);
+    }
+    
+    public void invasionInsecto()
+    */
+    public void invasion() {
+        System.out.println("¡Invasor detectado!");
+        //invasorDetectado.set(true);
+        // DUDA: ¿Cómo interrumpir las hormigas soldado y mandarlas a la lista?
+        for (Hormiga hormiga: listaHormigasSoldado) {
+            salirPorComida(hormiga);
+            listaHormigasRepeliendoInsecto.meter(hormiga);
+            try {
+                Thread.sleep(20000);
+            } catch (InterruptedException ex) {}
+            //invasorDetectado.set(false);
+        }
+    }
+
+    public ListaThreads getListaHormigasRepeliendoInsecto() {
+        return listaHormigasRepeliendoInsecto;
+    }
+
+    public ListaThreads getListaRefugio() {
+        return listaRefugio;
+    }
+    
+    
     
 }

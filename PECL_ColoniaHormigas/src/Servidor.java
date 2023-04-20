@@ -16,6 +16,7 @@ public class Servidor extends javax.swing.JFrame {
 
     Colonia c;
     Paso paso;
+    int numeroHormigasSoldado;
 
     /**
      * Creates new form Servidor
@@ -28,7 +29,7 @@ public class Servidor extends javax.swing.JFrame {
                 jTextFieldHormigasDescansando, jTextFieldComidaAlmacen,
                 jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldRefugio);
         paso = new Paso();
-
+        
         new Thread(new Runnable() {
             Random r = new Random();
         
@@ -55,11 +56,14 @@ public class Servidor extends javax.swing.JFrame {
                 HormigaSoldado hs = new HormigaSoldado(numSoldado, c, paso);
                 hs.start();
                 numSoldado++;
+                c.getListaHormigasSoldado().add(hs);
                 sleep(r.nextInt(800, 3501));
                 HormigaCria hc = new HormigaCria(numCria, c, paso);
                 hc.start();
                 numCria++;
+                c.getListaHormigasCria().add(hc);
                 sleep(r.nextInt(800, 3501));
+                numeroHormigasSoldado = numSoldado;
                 numHormigas += 5;
             } catch (InterruptedException ex) {
                 Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
@@ -292,6 +296,8 @@ public class Servidor extends javax.swing.JFrame {
 
     private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed
         // TODO add your handling code here:
+        // ¿Cómo llego a cada hormiga?
+        c.invasion();
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 
     /**

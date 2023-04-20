@@ -1,4 +1,6 @@
 public class HormigaSoldado extends Hormiga {
+    private boolean enInvasion;
+    
     public HormigaSoldado(int num, Colonia colonia, Paso paso) {
         super(num, colonia, paso);
         if (num < 10) {
@@ -10,15 +12,19 @@ public class HormigaSoldado extends Hormiga {
         } else {
             this.setIdentificador("HS" + num);
         }
+        this.enInvasion = false;
     }
     
     @Override
     public void run() {
+        /* Para la interrupción, hacer while (!isInterrupted()) 
+        y después el comportamiento correspondiente a la interrupción */
         int num = this.getNum();
         this.getPaso().mirar();
         this.getC().cruzarTunelEntrada(this);
         while (true) {
-            for (int i = 0; i < 6; i++) {
+            while(!this.isInterrupted()) {
+                for (int i = 0; i < 6; i++) {
                 this.getPaso().mirar();
                 this.getC().zonaInstruccion(this);
                 this.getPaso().mirar();
@@ -26,6 +32,10 @@ public class HormigaSoldado extends Hormiga {
             }
             this.getPaso().mirar();
             this.getC().zonaComer(this);
+            }
+            if (this.isInterrupted()) {
+                this.getC().getListaHormigasRepeliendoInsecto().meter(this);
+            }
         }
     }
     
