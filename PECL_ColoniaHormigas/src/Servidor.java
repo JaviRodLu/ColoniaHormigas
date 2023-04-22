@@ -32,14 +32,13 @@ public class Servidor extends javax.swing.JFrame {
         
         new Thread(new Runnable() {
             Random r = new Random();
-        
             int numObrera = 1;
             int numSoldado = 1;
             int numCria = 1;
             int numHormigas = 0;
             @Override
             public void run() {
-                while (numHormigas < 5) {
+                while (numHormigas < 10) {
                 try {
                 HormigaObrera ho1 = new HormigaObrera(numObrera, c, paso);
                 ho1.start();
@@ -56,7 +55,8 @@ public class Servidor extends javax.swing.JFrame {
                 HormigaSoldado hs = new HormigaSoldado(numSoldado, c, paso);
                 hs.start();
                 numSoldado++;
-                c.getListaHormigasSoldado().add(hs);
+                //c.setListaHormigasSoldado(c.getListaHormigasSoldado().add(hs));
+                c.listaHormigasSoldado.add(hs);
                 sleep(r.nextInt(800, 3501));
                 HormigaCria hc = new HormigaCria(numCria, c, paso);
                 hc.start();
@@ -297,6 +297,7 @@ public class Servidor extends javax.swing.JFrame {
     private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed
         // TODO add your handling code here:
         // ¿Cómo llego a cada hormiga?
+        c.iniciarGuerra(numeroHormigasSoldado);
         c.invasion();
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 

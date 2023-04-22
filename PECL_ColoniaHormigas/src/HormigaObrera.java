@@ -29,6 +29,8 @@ public class HormigaObrera extends Hormiga {
                         this.getC().cogerComidaParaComer(this);
                     }
                     this.getPaso().mirar();
+                    this.getC().salirDeAlmacenComida(this);
+                    this.getPaso().mirar();
                     this.getC().viajarZonaComer(this);
                     for (int j = 0; j < 5; j++) {
                         this.getPaso().mirar();
@@ -36,9 +38,17 @@ public class HormigaObrera extends Hormiga {
                     }
                 }
                 this.getPaso().mirar();
-                this.getC().zonaComer(this);
+                this.getC().entrarEnZonaComer(this);
                 this.getPaso().mirar();
-                this.getC().zonaDescansoObrera(this);
+                this.getC().comer(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaComer(this);
+                this.getPaso().mirar();
+                this.getC().entrarEnZonaDescanso(this);
+                this.getPaso().mirar();
+                this.getC().descansar(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaDescanso(this);
             }
         } else {
             while (true) {
@@ -47,17 +57,33 @@ public class HormigaObrera extends Hormiga {
                     //this.getC().cruzarTunelSalida(this);
                     this.getPaso().mirar();
                     this.getC().salirPorComida(this);
+                    for (int j = 0; j < 5; j++) {
+                        this.getPaso().mirar();
+                        this.getC().recogerComida(this);
+                    }
+                    this.getPaso().mirar();
+                    this.getC().volverAColonia(this);
                     this.getPaso().mirar();
                     this.getC().entrarAlmacenComidaImpar(this);
                     for (int j = 0; j < 5; j++) {
                         this.getPaso().mirar();
-                        this.getC().dejarComida(this);
+                        this.getC().dejarComidaEnAlmacen(this);
                     }
+                    this.getPaso().mirar();
+                    this.getC().salirDeAlmacenComida(this);
                 }
                 this.getPaso().mirar();
-                this.getC().zonaComer(this);
+                this.getC().entrarEnZonaComer(this);
                 this.getPaso().mirar();
-                this.getC().zonaDescansoObrera(this);
+                this.getC().comer(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaComer(this);
+                this.getPaso().mirar();
+                this.getC().entrarEnZonaDescanso(this);
+                this.getPaso().mirar();
+                this.getC().descansar(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaDescanso(this);
             }
         }
     }

@@ -25,6 +25,29 @@ public class HormigaSoldado extends Hormiga {
         while (true) {
             while(!this.isInterrupted()) {
                 for (int i = 0; i < 6; i++) {
+                    this.getPaso().mirar();
+                    this.getC().entrarEnZonaInstruccion(this);
+                    this.getPaso().mirar();
+                    this.getC().hacerInstruccion(this);
+                    this.getPaso().mirar();
+                    this.getC().salirDeZonaInstruccion(this);
+                    this.getPaso().mirar();
+                    this.getC().entrarEnZonaDescanso(this);
+                    this.getPaso().mirar();
+                    this.getC().descansar(this);
+                    this.getPaso().mirar();
+                    this.getC().salirDeZonaDescanso(this);
+                }
+                this.getPaso().mirar();
+                this.getC().entrarEnZonaComer(this);
+                this.getPaso().mirar();
+                this.getC().comer(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaComer(this);
+            }
+        }
+        /*while(!this.isInterrupted()) {
+            for (int i = 0; i < 6; i++) {
                 this.getPaso().mirar();
                 this.getC().zonaInstruccion(this);
                 this.getPaso().mirar();
@@ -33,10 +56,7 @@ public class HormigaSoldado extends Hormiga {
             this.getPaso().mirar();
             this.getC().zonaComer(this);
             }
-            if (this.isInterrupted()) {
-                this.getC().getListaHormigasRepeliendoInsecto().meter(this);
-            }
-        }
+        this.getC().getListaHormigasRepeliendoInsecto().meter(this);
+        }*/
     }
-    
 }
