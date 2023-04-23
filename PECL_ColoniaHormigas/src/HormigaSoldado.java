@@ -1,5 +1,5 @@
 public class HormigaSoldado extends Hormiga {
-    private boolean enInvasion;
+    private boolean enGuerra;
     
     public HormigaSoldado(int num, Colonia colonia, Paso paso) {
         super(num, colonia, paso);
@@ -12,7 +12,7 @@ public class HormigaSoldado extends Hormiga {
         } else {
             this.setIdentificador("HS" + num);
         }
-        this.enInvasion = false;
+        this.enGuerra = false;
     }
     
     @Override
@@ -46,6 +46,8 @@ public class HormigaSoldado extends Hormiga {
                 this.getC().salirDeZonaComer(this);
             }
         }
+        
+        
         /*while(!this.isInterrupted()) {
             for (int i = 0; i < 6; i++) {
                 this.getPaso().mirar();
@@ -58,5 +60,9 @@ public class HormigaSoldado extends Hormiga {
             }
         this.getC().getListaHormigasRepeliendoInsecto().meter(this);
         }*/
+    }
+
+    public void setEnGuerra(boolean enGuerra) {
+        this.enGuerra = enGuerra;
     }
 }

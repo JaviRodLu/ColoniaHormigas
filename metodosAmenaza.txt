@@ -1,0 +1,90 @@
+/*public void iniciarGuerra(int numHormigasSoldado) {
+        System.out.println("¡Invasor detectado!");
+        this.hormigasLuchando = new CyclicBarrier(numHormigasSoldado);
+        for (HormigaSoldado hormiga: listaHormigasSoldado) {
+            hormiga.interrupt();
+        }
+    }*/
+    
+    public void generarAmenaza(int numHormigasSoldado) {
+        this.hormigasLuchando = new CyclicBarrier(numHormigasSoldado);
+        if (!amenazaGenerada) {
+            Thread insecto = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        System.out.println("¡Invasión en curso!");
+                        Thread.sleep(2000);
+                        hormigasLuchando.await();
+                        System.out.println("¡Comienza la lucha!");
+                        Thread.sleep(20000);
+                        System.out.println("¡El insecto ha huido!");
+                        amenazaGenerada = false;
+                    } catch (InterruptedException ex) {
+                        System.out.println("El insecto ha sido repelido por las hormigas soldado.");
+                    } catch (BrokenBarrierException ex) {
+                        System.out.println("Una hormiga soldado ha sufrido un error");
+                    } finally {
+                        tunelSalida1.release();
+                    }
+                }
+            });
+            insecto.start();
+            amenazaGenerada = true;
+        } else {
+            System.out.println("Ya hay una amenaza en curso, esperar a que acabe para generar otra.");
+        }
+    }
+    
+    public void finGuerra() {
+        System.out.println("Fin de la guerra");
+        for(HormigaSoldado hormiga: listaHormigasSoldado) {
+            hormiga.setEnGuerra(false);
+        }
+        hormigasLuchando.reset();
+    }
+    
+    public void irALuchar (HormigaSoldado hs) {
+        try {
+            if (tunelSalida1.tryAcquire()) {
+                //tunelSalida1.acquire();
+                Thread.sleep(100);
+                System.out.println("La hormiga " +  hs.getIdentificador() + " sale por el túnel de salida 1.");
+                listaHormigasRepeliendoInsecto.meter(hs);
+                tunelSalida1.release();
+            } else if (tunelSalida2.tryAcquire()) {
+                //tunelSalida2.acquire();
+                Thread.sleep(100);
+                System.out.println("La hormiga " +  hs.getIdentificador() + " sale por el túnel de salida 2.");
+                listaHormigasRepeliendoInsecto.meter(hs);
+                tunelSalida2.release();
+            }
+            hormigasLuchando.await();
+            //listaHormigasRepeliendoInsecto.meter(hs);
+        } catch (InterruptedException | BrokenBarrierException ex) {
+            Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void invasion() {
+        //invasorDetectado.set(true);
+        // DUDA: ¿Cómo interrumpir las hormigas soldado y mandarlas a la lista? ¿Cuándo crear la barrera?
+        
+        for (HormigaSoldado hormiga: listaHormigasSoldado) {
+            irALuchar(hormiga);
+            try {
+                System.out.println("Comienza la lucha de las hormigas contra el insecto invasor");
+                Thread.sleep(20000);
+                System.out.println("¡Las hormigas han ganado!");
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
+            } 
+            
+            //invasorDetectado.set(false);
+        }
+    }
+    
+    /*public void finGuerra() {
+        System.out.println("Invasor derrotado");
+        this.hormigasLuchando.reset();
+    }*/

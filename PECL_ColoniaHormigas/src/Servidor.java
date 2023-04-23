@@ -1,4 +1,3 @@
-
 import static java.lang.Thread.sleep;
 import java.util.Random;
 import java.util.logging.Level;
@@ -16,7 +15,6 @@ public class Servidor extends javax.swing.JFrame {
 
     Colonia c;
     Paso paso;
-    int numeroHormigasSoldado;
 
     /**
      * Creates new form Servidor
@@ -55,7 +53,6 @@ public class Servidor extends javax.swing.JFrame {
                 HormigaSoldado hs = new HormigaSoldado(numSoldado, c, paso);
                 hs.start();
                 numSoldado++;
-                //c.setListaHormigasSoldado(c.getListaHormigasSoldado().add(hs));
                 c.listaHormigasSoldado.add(hs);
                 sleep(r.nextInt(800, 3501));
                 HormigaCria hc = new HormigaCria(numCria, c, paso);
@@ -63,7 +60,6 @@ public class Servidor extends javax.swing.JFrame {
                 numCria++;
                 c.getListaHormigasCria().add(hc);
                 sleep(r.nextInt(800, 3501));
-                numeroHormigasSoldado = numSoldado;
                 numHormigas += 5;
             } catch (InterruptedException ex) {
                 Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
@@ -296,9 +292,7 @@ public class Servidor extends javax.swing.JFrame {
 
     private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed
         // TODO add your handling code here:
-        // ¿Cómo llego a cada hormiga?
-        c.iniciarGuerra(numeroHormigasSoldado);
-        c.invasion();
+        c.interrumpirHormigas(c.listaHormigasSoldado.size());
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 
     /**
