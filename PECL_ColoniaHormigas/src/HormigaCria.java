@@ -24,8 +24,8 @@ public class HormigaCria extends Hormiga {
                 this.getC().entrarEnZonaComer(this);
                 this.getPaso().mirar();
                 this.getC().comer(this);
-                this.getPaso().mirar();
-                this.getC().salirDeZonaComer(this);
+                //this.getPaso().mirar();
+                //this.getC().salirDeZonaComer(this);
                 this.getPaso().mirar();
                 this.getC().entrarEnZonaDescanso(this);
                 this.getPaso().mirar();

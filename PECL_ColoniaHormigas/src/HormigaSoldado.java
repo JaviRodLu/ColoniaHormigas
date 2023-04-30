@@ -40,8 +40,8 @@ public class HormigaSoldado extends Hormiga {
                 }
                 this.getPaso().mirar();
                 this.getC().entrarEnZonaComer(this);
-                this.getPaso().mirar();
-                this.getC().comer(this);
+                //this.getPaso().mirar();
+                //this.getC().comer(this);
                 this.getPaso().mirar();
                 this.getC().salirDeZonaComer(this);
             }

@@ -53,22 +53,22 @@ public class Servidor extends javax.swing.JFrame {
                 HormigaSoldado hs = new HormigaSoldado(numSoldado, c, paso);
                 hs.start();
                 numSoldado++;
-                c.protegerArrayHormigasSoldado.lock();
+                /*c.protegerArrayHormigasSoldado.lock();
                 try {
                     c.listaHormigasSoldado.add(hs);
                 } finally {
                     c.protegerArrayHormigasSoldado.unlock();
-                }
+                }*/
                 sleep(r.nextInt(800, 3501));
                 HormigaCria hc = new HormigaCria(numCria, c, paso);
                 hc.start();
                 numCria++;
-                c.protegerArrayHormigasCria.lock();
+                /*c.protegerArrayHormigasCria.lock();
                 try {
                     c.getListaHormigasCria().add(hc);
                 } finally {
                     c.protegerArrayHormigasCria.unlock();
-                }
+                }*/
                 sleep(r.nextInt(800, 3501));
                 numHormigas += 5;
             } catch (InterruptedException ex) {
