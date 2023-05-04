@@ -20,10 +20,10 @@ public class HormigaCria extends Hormiga {
         this.getC().cruzarTunelEntrada(this);
         while(true) {
             while(!this.isInterrupted()) {
-                this.getPaso().mirar();
-                this.getC().entrarEnZonaComer(this);
-                this.getPaso().mirar();
-                this.getC().comer(this);
+                //this.getPaso().mirar();
+                //this.getC().entrarEnZonaComer(this);
+                //this.getPaso().mirar();
+                //this.getC().comer(this);
                 //this.getPaso().mirar();
                 //this.getC().salirDeZonaComer(this);
                 this.getPaso().mirar();

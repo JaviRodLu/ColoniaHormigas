@@ -10,13 +10,33 @@ public class ListaThreads {
         this.campo = campo;
     }
     
-    public synchronized void meter(Hormiga h) {
-        lista.add(h);
+    public synchronized void meter(HormigaSoldado hs) {
+        lista.add(hs);
         imprimir();
     }
     
-    public synchronized void sacar(Hormiga h) {
-        lista.remove(h);
+    public synchronized void meter(HormigaObrera ho) {
+        lista.add(ho);
+        imprimir();
+    }
+    
+    public synchronized void meter(HormigaCria hc) {
+        lista.add(hc);
+        imprimir();
+    }
+    
+    public synchronized void sacar(HormigaSoldado hs) {
+        lista.remove(hs);
+        imprimir();
+    }
+    
+    public synchronized void sacar(HormigaObrera ho) {
+        lista.remove(ho);
+        imprimir();
+    }
+    
+    public synchronized void sacar(HormigaCria hc) {
+        lista.remove(hc);
         imprimir();
     }
     

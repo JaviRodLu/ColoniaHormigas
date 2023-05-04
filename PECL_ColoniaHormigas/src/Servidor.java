@@ -3,14 +3,6 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-/**
- *
- * @author javi
- */
 public class Servidor extends javax.swing.JFrame {
 
     Colonia c;
@@ -36,7 +28,7 @@ public class Servidor extends javax.swing.JFrame {
             int numHormigas = 0;
             @Override
             public void run() {
-                while (numHormigas < 10) {
+                while (numHormigas < 8) {
                 try {
                 HormigaObrera ho1 = new HormigaObrera(numObrera, c, paso);
                 ho1.start();
@@ -53,24 +45,24 @@ public class Servidor extends javax.swing.JFrame {
                 HormigaSoldado hs = new HormigaSoldado(numSoldado, c, paso);
                 hs.start();
                 numSoldado++;
-                /*c.protegerArrayHormigasSoldado.lock();
+                c.protegerArrayHormigasSoldado.lock();
                 try {
                     c.listaHormigasSoldado.add(hs);
                 } finally {
                     c.protegerArrayHormigasSoldado.unlock();
-                }*/
+                }
                 sleep(r.nextInt(800, 3501));
-                HormigaCria hc = new HormigaCria(numCria, c, paso);
-                hc.start();
-                numCria++;
+                //HormigaCria hc = new HormigaCria(numCria, c, paso);
+                //hc.start();
+                //numCria++;
                 /*c.protegerArrayHormigasCria.lock();
                 try {
                     c.getListaHormigasCria().add(hc);
                 } finally {
                     c.protegerArrayHormigasCria.unlock();
                 }*/
-                sleep(r.nextInt(800, 3501));
-                numHormigas += 5;
+                //sleep(r.nextInt(800, 3501));
+                numHormigas += 4;
             } catch (InterruptedException ex) {
                 Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -35,10 +35,12 @@ public class HormigaObrera extends Hormiga {
                     } catch (InterruptedException ex) {
                         Logger.getLogger(HormigaObrera.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    for (int j = 0; j < 5; j++) {
+                    /*for (int j = 0; j < 5; j++) {
                         this.getPaso().mirar();
                         this.getC().cogerComidaParaComer(this);
-                    }
+                    }*/
+                    this.getPaso().mirar();
+                    this.getC().cogerComidaParaComer(this);
                     this.getPaso().mirar();
                     this.getC().salirDeAlmacenComida(this);
                     this.getPaso().mirar();
@@ -48,10 +50,10 @@ public class HormigaObrera extends Hormiga {
                     } catch (InterruptedException ex) {
                         Logger.getLogger(HormigaObrera.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    for (int j = 0; j < 5; j++) {
+                    /*for (int j = 0; j < 5; j++) {
                         this.getPaso().mirar();
                         this.getC().depositarComida(this);
-                    }
+                    }*/
                     this.getPaso().mirar();
                     this.getC().depositarComida(this);
                 }
@@ -59,8 +61,8 @@ public class HormigaObrera extends Hormiga {
                 this.getC().entrarEnZonaComer(this);
                 this.getPaso().mirar();
                 this.getC().comer(this);
-                //this.getPaso().mirar();
-                //this.getC().salirDeZonaComer(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaComer(this);
                 this.getPaso().mirar();
                 this.getC().entrarEnZonaDescanso(this);
                 this.getPaso().mirar();
@@ -79,10 +81,12 @@ public class HormigaObrera extends Hormiga {
                     } catch (InterruptedException ex) {
                         Logger.getLogger(HormigaObrera.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    for (int j = 0; j < 5; j++) {
+                    /*for (int j = 0; j < 5; j++) {
                         this.getPaso().mirar();
                         this.getC().recogerComida(this);
-                    }
+                    }*/
+                    this.getPaso().mirar();
+                    this.getC().recogerComida(this);
                     this.getPaso().mirar();
                     this.getC().volverAColonia(this);
                     this.getPaso().mirar();
@@ -93,10 +97,12 @@ public class HormigaObrera extends Hormiga {
                     } catch (InterruptedException ex) {
                         Logger.getLogger(HormigaObrera.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    for (int j = 0; j < 5; j++) {
+                    /*for (int j = 0; j < 5; j++) {
                         this.getPaso().mirar();
                         this.getC().dejarComidaEnAlmacen(this);
-                    }
+                    }*/
+                    this.getPaso().mirar();
+                    this.getC().dejarComidaEnAlmacen(this);
                     this.getPaso().mirar();
                     this.getC().salirDeAlmacenComida(this);
                 }
@@ -104,8 +110,8 @@ public class HormigaObrera extends Hormiga {
                 this.getC().entrarEnZonaComer(this);
                 this.getPaso().mirar();
                 this.getC().comer(this);
-                //this.getPaso().mirar();
-                //this.getC().salirDeZonaComer(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaComer(this);
                 this.getPaso().mirar();
                 this.getC().entrarEnZonaDescanso(this);
                 this.getPaso().mirar();
