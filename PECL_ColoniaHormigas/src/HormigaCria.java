@@ -18,14 +18,15 @@ public class HormigaCria extends Hormiga {
         int num = this.getNum();
         this.getPaso().mirar();
         this.getC().cruzarTunelEntrada(this);
+        //Mandarlas al refugio si, al crearlas, hay una invasión en curso
         while(true) {
             while(!this.isInterrupted()) {
-                //this.getPaso().mirar();
-                //this.getC().entrarEnZonaComer(this);
-                //this.getPaso().mirar();
-                //this.getC().comer(this);
-                //this.getPaso().mirar();
-                //this.getC().salirDeZonaComer(this);
+                this.getPaso().mirar();
+                this.getC().entrarEnZonaComer(this);
+                this.getPaso().mirar();
+                this.getC().comer(this);
+                this.getPaso().mirar();
+                this.getC().salirDeZonaComer(this);
                 this.getPaso().mirar();
                 this.getC().entrarEnZonaDescanso(this);
                 this.getPaso().mirar();
