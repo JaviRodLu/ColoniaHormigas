@@ -1,3 +1,7 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class HormigaSoldado extends Hormiga {
     private boolean enGuerra;
     
@@ -41,9 +45,9 @@ public class HormigaSoldado extends Hormiga {
                 this.getPaso().mirar();
                 this.getC().entrarEnZonaComer(this);
                 this.getPaso().mirar();
-                this.getC().comer(this);
+                this.getC().comer(this); //Logger.getLogger(HormigaSoldado.class.getName()).log(Level.SEVERE, null, ex);
                 this.getPaso().mirar();
-                this.getC().salirDeZonaComer(this);
+                this.getC().salirDeZonaComer(this); //Logger.getLogger(HormigaSoldado.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

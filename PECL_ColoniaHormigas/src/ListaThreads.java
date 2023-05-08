@@ -40,6 +40,16 @@ public class ListaThreads {
         imprimir();
     }
     
+    /*public synchronized void meter(Hormiga h) {
+        lista.add(h);
+        imprimir();
+    }
+    
+    public synchronized void sacar(Hormiga h) {
+        lista.remove(h);
+        imprimir();
+    }*/
+    
     public void imprimir() {
         String contenido = "";
         for (int i = 0; i < lista.size(); i++) {
