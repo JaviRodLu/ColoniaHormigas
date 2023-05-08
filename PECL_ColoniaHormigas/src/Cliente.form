@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabelNumObrerasExterior" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNumObrerasInterior" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNumSoldadoInstruccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNumSoldadoLuchando" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNumCriasComiendo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNumCriasRefugio" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldNumSoldadoInstruccion" max="32767" attributes="0"/>
+                  <Component id="jTextFieldNumObrerasExterior" max="32767" attributes="0"/>
+                  <Component id="jTextFieldNumObrerasInterior" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTextFieldNumCriasRefugio" min="-2" pref="80" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumCriasComiendo" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTextFieldNumSoldadoLuchando" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+              <Component id="jButtonGenerarAmenaza" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNumObrerasExterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumObrerasExterior" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNumObrerasInterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumObrerasInterior" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNumSoldadoInstruccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumSoldadoInstruccion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNumSoldadoLuchando" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumSoldadoLuchando" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNumCriasComiendo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumCriasComiendo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelNumCriasRefugio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNumCriasRefugio" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Component id="jButtonGenerarAmenaza" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="81" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabelNumObrerasExterior">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de hormigas obreras en el exterior de la colonia"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNumObrerasInterior">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de hormigas obreras en el interior de la colonia"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNumSoldadoInstruccion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de hormigas soldado haciendo instrucci&#xf3;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNumSoldadoLuchando">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de hormigas soldado repeliendo una invasi&#xf3;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNumCriasComiendo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de hormigas cr&#xed;as en la ZONA PARA COMER"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNumCriasRefugio">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xfa;mero de hormigas cr&#xed;as en el REFUGIO"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumObrerasExterior">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumObrerasInterior">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumSoldadoInstruccion">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumSoldadoLuchando">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumCriasComiendo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNumCriasRefugio">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonGenerarAmenaza">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Generar Amenaza Insecto Invasor"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonGenerarAmenazaActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

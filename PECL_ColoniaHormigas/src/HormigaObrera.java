@@ -26,6 +26,7 @@ public class HormigaObrera extends Hormiga {
         this.getC().cruzarTunelEntrada(this);
         if (num % 2 == 0) {
             while (true) {
+                //Hacer sleeps antes de incrementar unidades de comida
                 for (int i = 0; i < 10; i++) {
                     this.getPaso().mirar();
                     //this.getC().entrarAlmacenComidaPar(this);
