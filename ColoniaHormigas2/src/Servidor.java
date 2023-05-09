@@ -19,7 +19,7 @@ public class Servidor extends javax.swing.JFrame {
                 jTextFieldHormigasDescansando, jTextFieldComidaAlmacen,
                 jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldRefugio);*/
         c = new Colonia(jTextFieldHormigasBuscandoComida,jTextFieldHormigasAlmacen,
-                jTextFieldComidaAlmacen, jTextFieldHormigasLlevandoComida, jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldHormigasDescansando, jTextFieldHormigasHaciendoInstruccion,jTextFieldHormigasRepeliendoInsecto);
+                jTextFieldComidaAlmacen, jTextFieldHormigasLlevandoComida, jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldHormigasDescansando, jTextFieldHormigasHaciendoInstruccion,jTextFieldHormigasRepeliendoInsecto, jTextFieldRefugio);
         paso = new Paso();
         
         new Thread(new Runnable() {
@@ -30,7 +30,7 @@ public class Servidor extends javax.swing.JFrame {
             int numHormigas = 0;
             @Override
             public void run() {
-                while (numHormigas < 52) {
+                while (numHormigas < 5) {
                 try {
                 HormigaObrera ho1 = new HormigaObrera(numObrera, c, paso);
                 ho1.start();
@@ -54,7 +54,7 @@ public class Servidor extends javax.swing.JFrame {
                     c.protegerArrayHormigasSoldado.unlock();
                 }
                 sleep(r.nextInt(800, 3501));
-                /*HormigaCria hc = new HormigaCria(numCria, c, paso);
+                HormigaCria hc = new HormigaCria(numCria, c, paso);
                 hc.start();
                 numCria++;
                 c.protegerArrayHormigasCria.lock();
@@ -63,8 +63,8 @@ public class Servidor extends javax.swing.JFrame {
                 } finally {
                     c.protegerArrayHormigasCria.unlock();
                 }
-                sleep(r.nextInt(800, 3501));*/
-                numHormigas += 4;
+                sleep(r.nextInt(800, 3501));
+                numHormigas += 5;
             } catch (InterruptedException ex) {
                 Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -20,7 +20,7 @@ public class HormigaSoldado extends Hormiga {
         this.getC().entrar(this);
         while(true) {
             while(!this.isInterrupted()) {
-                for (int i = 0; i < 2; i++) {
+                for (int i = 0; i < 6; i++) {
                 this.getPaso().mirar();
                 this.getC().entrarEnZonaInstruccion(this);
                 this.getPaso().mirar();
