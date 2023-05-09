@@ -3,7 +3,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class HormigaSoldado extends Hormiga {
-    private boolean enGuerra;
     
     public HormigaSoldado(int num, Colonia colonia, Paso paso) {
         super(num, colonia, paso);
@@ -16,7 +15,6 @@ public class HormigaSoldado extends Hormiga {
         } else {
             this.setIdentificador("HS" + num);
         }
-        this.enGuerra = false;
     }
     
     @Override

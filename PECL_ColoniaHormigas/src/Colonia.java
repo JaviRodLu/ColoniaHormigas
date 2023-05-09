@@ -274,7 +274,7 @@ public class Colonia {
         // Para las hormigas Obrera
         zonaComer.lock();
         try {
-            if (unidadesComidaComer == 0) {
+            if (unidadesComidaComer <= 0) {
                 sinComidaComer.await();
             }
             unidadesComidaComer--;
@@ -290,7 +290,7 @@ public class Colonia {
         // Para las hormigas Soldado
         zonaComer.lock();
         try {
-            if (unidadesComidaComer == 0) {
+            if (unidadesComidaComer <= 0) {
                 sinComidaComer.await();
             }
             unidadesComidaComer--;
@@ -308,7 +308,7 @@ public class Colonia {
         // Para las hormigas Cría
         zonaComer.lock();
         try {
-            if (unidadesComidaComer == 0) {
+            if (unidadesComidaComer <= 0) {
                 sinComidaComer.await();
             }
             unidadesComidaComer--;
