@@ -22,7 +22,7 @@ public class HormigaObrera extends Hormiga {
         this.getC().entrar(this);
         if ((num % 2) == 0) {
             while(true) {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 2; i++) {
                     this.getPaso().mirar();
                     this.getC().entrarAlmacenComida(this);
                     this.getPaso().mirar();
@@ -50,7 +50,7 @@ public class HormigaObrera extends Hormiga {
             }
         } else {
             while(true) {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 2; i++) {
                     this.getPaso().mirar();
                     this.getC().salirPorComida(this);
                     this.getPaso().mirar();
