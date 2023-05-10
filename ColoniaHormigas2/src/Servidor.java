@@ -30,7 +30,7 @@ public class Servidor extends javax.swing.JFrame {
             int numHormigas = 0;
             @Override
             public void run() {
-                while (numHormigas < 5) {
+                while (numHormigas < 10) {
                 try {
                 HormigaObrera ho1 = new HormigaObrera(numObrera, c, paso);
                 ho1.start();
@@ -297,6 +297,7 @@ public class Servidor extends javax.swing.JFrame {
     private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed
         // TODO add your handling code here:
         c.interrumpirHormigas();
+        //c.interrumpirCrias();
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 
     /**
