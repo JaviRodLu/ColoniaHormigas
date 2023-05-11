@@ -1,3 +1,7 @@
+/**
+ * Implementación de los métodos declarados por la interfaz remota
+ */
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -38,7 +42,6 @@ public class Implementacion extends UnicastRemoteObject implements Interfaz {
 
     public void generarInsectoInvasor() throws RemoteException {
         colonia.interrumpirHormigas();
-        colonia.interrumpirCrias();
     }
     
 }

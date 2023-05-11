@@ -1,5 +1,11 @@
 import java.rmi.*;
 
+/**
+ * Cliente que se conecta al servidor para consultar algunos datos interesantes
+ * de la Colonia, ofreciendo además la posibilidad de generar la amenaza 
+ * del insecto invasor.
+ */
+
 public class Cliente extends javax.swing.JFrame {
     Interfaz interfaz;
     int numObrerasExterior, numObrerasInterior, numSoldadoInstruccion, numSoldadoRepeliendoInvasion, numCriasZonaComer, numCriasRefugio;
@@ -30,7 +36,7 @@ public class Cliente extends javax.swing.JFrame {
                         jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
                         jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
                         
-                        Thread.sleep(500);
+                        Thread.sleep(200);
                     }
                 } catch (Exception e) {
                     System.err.println("Error en el cliente RMI: " + e.getMessage());

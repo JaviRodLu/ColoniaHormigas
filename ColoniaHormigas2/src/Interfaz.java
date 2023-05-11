@@ -1,5 +1,10 @@
 import java.rmi.*;
 
+/**
+ * Interfaz que declara los métodos remotos que ofrecerá el servidor
+ * para que los clientes consulten algunos datos de la Colonia.
+ */
+
 public interface Interfaz extends Remote {
     int getNumObrerasExterior() throws RemoteException;
     int getNumObrerasInterior() throws RemoteException;

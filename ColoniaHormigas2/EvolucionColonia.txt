@@ -1,0 +1,660 @@
+2023-05-12T00:17:56.491400919: La hormiga HO0001 accede al túnel de entrada.
+2023-05-12T00:17:56.595292489: La hormiga HO0001 sale a por comida por el túnel de salida 1.
+2023-05-12T00:17:57.394140180: La hormiga HO0002 accede al túnel de entrada.
+2023-05-12T00:17:57.508284393: La hormiga HO0002 entra al almacén de comida
+2023-05-12T00:18:00.701697022: La hormiga HO0001 coge cinco elementos de comida del exterior
+2023-05-12T00:18:00.806083262: La hormiga HO0001 vuelve a la Colonia.
+2023-05-12T00:18:00.806881484: La hormiga HO0003 accede al túnel de entrada.
+2023-05-12T00:18:00.808202976: La hormiga HO0001 entra al almacén de comida
+2023-05-12T00:18:00.907980140: La hormiga HO0003 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:01.947144280: La hormiga HS0001 accede al túnel de entrada.
+2023-05-12T00:18:02.048886606: La hormiga HS0001 entra en la colonia.
+2023-05-12T00:18:02.049596829: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:18:03.475915639: La hormiga HO0001 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:18:03.477711365: La hormiga HO0001 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:03.960124736: La hormiga HC0001 accede al túnel de entrada.
+2023-05-12T00:18:04.061178652: La hormiga HC0001 entra en la colonia.
+2023-05-12T00:18:04.062355119: La hormiga HC0001 va a comer.
+2023-05-12T00:18:04.816426385: La hormiga HO0002 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:18:05.010311810: La hormiga HO0003 coge cinco elementos de comida del exterior
+2023-05-12T00:18:05.112413685: La hormiga HO0003 vuelve a la Colonia.
+2023-05-12T00:18:05.114858969: La hormiga HO0003 entra al almacén de comida
+2023-05-12T00:18:06.720619916: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:18:06.722653708: La hormiga HO0004 accede al túnel de entrada.
+2023-05-12T00:18:06.723985568: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:18:06.824627110: La hormiga HO0004 entra al almacén de comida
+2023-05-12T00:18:07.580847306: La hormiga HO0001 coge cinco elementos de comida del exterior
+2023-05-12T00:18:07.596609689: La hormiga HO0002 deja 5 unidades de comida en la zona para comer. Hay 5 unidades.
+2023-05-12T00:18:07.598425719: La hormiga HO0002 entra al almacén de comida
+2023-05-12T00:18:07.599019500: La hormiga HC0001 coge una unidad de comida. Quedan 4 unidades.
+2023-05-12T00:18:07.682625774: La hormiga HO0001 vuelve a la Colonia.
+2023-05-12T00:18:07.683565549: La hormiga HO0001 entra al almacén de comida
+2023-05-12T00:18:08.081985050: La hormiga HO0005 accede al túnel de entrada.
+2023-05-12T00:18:08.182620124: La hormiga HO0005 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:08.722442405: La hormiga HS0001 deja de descansar y se va a luchar.
+2023-05-12T00:18:08.824052326: La hormiga HC0001 deja de comer y se va al refugio.
+2023-05-12T00:18:09.011373792: La hormiga HO0003 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:18:09.015084499: La hormiga HO0003 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:10.558694610: La hormiga HO0006 accede al túnel de entrada.
+2023-05-12T00:18:10.660381754: La hormiga HO0006 entra al almacén de comida
+2023-05-12T00:18:10.836834216: La hormiga HO0004 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:18:12.283687559: La hormiga HO0005 coge cinco elementos de comida del exterior
+2023-05-12T00:18:12.384965707: La hormiga HO0005 vuelve a la Colonia.
+2023-05-12T00:18:12.387246806: La hormiga HO0005 entra al almacén de comida
+2023-05-12T00:18:12.659667638: La hormiga HS0002 accede al túnel de entrada.
+2023-05-12T00:18:12.760312188: La hormiga HS0002 entra en la colonia.
+2023-05-12T00:18:12.760542168: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:18:13.116569774: La hormiga HO0003 coge cinco elementos de comida del exterior
+2023-05-12T00:18:13.217387554: La hormiga HO0003 vuelve a la Colonia.
+2023-05-12T00:18:13.218244422: La hormiga HO0003 entra al almacén de comida
+2023-05-12T00:18:13.245869325: La hormiga HO0001 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:18:13.248942866: La hormiga HO0001 va a comer.
+2023-05-12T00:18:13.656890160: La hormiga HO0004 deja 5 unidades de comida en la zona para comer. Hay 9 unidades.
+2023-05-12T00:18:13.658165245: La hormiga HO0004 entra al almacén de comida
+2023-05-12T00:18:13.659757583: La hormiga HO0001 coge una unidad de comida. Quedan 8 unidades.
+2023-05-12T00:18:13.808807663: La hormiga HC0002 accede al túnel de entrada.
+2023-05-12T00:18:13.909270936: La hormiga HC0002 entra en la colonia.
+2023-05-12T00:18:14.310227154: La hormiga HO0006 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:18:14.887312590: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:18:14.888520003: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:18:16.661303796: La hormiga HO0001 termina de comer
+2023-05-12T00:18:16.664009564: La hormiga HO0001 entra en la zona de descanso
+2023-05-12T00:18:16.760463977: La hormiga HO0007 accede al túnel de entrada.
+2023-05-12T00:18:16.861095861: La hormiga HO0007 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:16.890227511: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:18:16.890687930: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:18:17.551559160: La hormiga HO0006 deja 5 unidades de comida en la zona para comer. Hay 13 unidades.
+2023-05-12T00:18:17.552671415: La hormiga HO0006 entra al almacén de comida
+2023-05-12T00:18:17.667504135: La hormiga HO0001 sale de la zona de descanso
+2023-05-12T00:18:17.677849869: La hormiga HO0001 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:17.831638303: La hormiga HO0005 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:18:17.833346890: La hormiga HO0005 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:19.713755723: La hormiga HO0008 accede al túnel de entrada.
+2023-05-12T00:18:19.814680528: La hormiga HO0008 entra al almacén de comida
+2023-05-12T00:18:20.962354990: La hormiga HO0007 coge cinco elementos de comida del exterior
+2023-05-12T00:18:21.063968111: La hormiga HO0007 vuelve a la Colonia.
+2023-05-12T00:18:21.064681083: La hormiga HO0007 entra al almacén de comida
+2023-05-12T00:18:21.092707624: La hormiga HO0003 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:18:21.093654084: La hormiga HO0003 va a comer.
+2023-05-12T00:18:21.094389870: La hormiga HO0003 coge una unidad de comida. Quedan 12 unidades.
+2023-05-12T00:18:21.618249957: La hormiga HO0009 accede al túnel de entrada.
+2023-05-12T00:18:21.719442263: La hormiga HO0009 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:21.778935318: La hormiga HO0001 coge cinco elementos de comida del exterior
+2023-05-12T00:18:21.880044792: La hormiga HO0001 vuelve a la Colonia.
+2023-05-12T00:18:21.881343147: La hormiga HO0001 entra al almacén de comida
+2023-05-12T00:18:21.934564694: La hormiga HO0005 coge cinco elementos de comida del exterior
+2023-05-12T00:18:22.035738632: La hormiga HO0005 vuelve a la Colonia.
+2023-05-12T00:18:22.036553223: La hormiga HO0005 entra al almacén de comida
+2023-05-12T00:18:22.146823753: La hormiga HO0002 coge 5 unidades de comida del almacén. Hay 5 unidades.
+2023-05-12T00:18:23.665102966: La hormiga HO0004 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:18:24.090460319: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:18:24.091057371: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:18:24.094800306: La hormiga HO0003 termina de comer
+2023-05-12T00:18:24.095398867: La hormiga HO0003 entra en la zona de descanso
+2023-05-12T00:18:24.505595750: La hormiga HS0003 accede al túnel de entrada.
+2023-05-12T00:18:24.606169011: La hormiga HS0003 entra en la colonia.
+2023-05-12T00:18:24.606919971: La hormiga HS0003 entra en la zona de instrucción.
+2023-05-12T00:18:25.096255624: La hormiga HO0003 sale de la zona de descanso
+2023-05-12T00:18:25.096571353: La hormiga HO0003 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:25.370156325: La hormiga HO0002 deja 5 unidades de comida en la zona para comer. Hay 17 unidades.
+2023-05-12T00:18:25.370634113: La hormiga HO0002 va a comer.
+2023-05-12T00:18:25.821151367: La hormiga HO0009 coge cinco elementos de comida del exterior
+2023-05-12T00:18:25.922541158: La hormiga HO0009 vuelve a la Colonia.
+2023-05-12T00:18:25.924853117: La hormiga HO0009 entra al almacén de comida
+2023-05-12T00:18:26.091977550: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:18:26.092326908: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:18:26.536190697: La hormiga HO0004 deja 5 unidades de comida en la zona para comer. Hay 22 unidades.
+2023-05-12T00:18:26.536512896: La hormiga HO0004 va a comer.
+2023-05-12T00:18:26.536959076: La hormiga HO0002 coge una unidad de comida. Quedan 21 unidades.
+2023-05-12T00:18:26.537411547: La hormiga HO0004 coge una unidad de comida. Quedan 20 unidades.
+2023-05-12T00:18:26.569567772: La hormiga HO0007 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:18:26.570694486: La hormiga HO0007 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:27.686143610: La hormiga HC0003 accede al túnel de entrada.
+2023-05-12T00:18:27.786580273: La hormiga HC0003 entra en la colonia.
+2023-05-12T00:18:28.723791274: La hormiga HS0001 sale de la zona de descanso
+2023-05-12T00:18:28.724251132: La hormiga HC0002 va a comer.
+2023-05-12T00:18:28.724698276: La hormiga HC0003 va a comer.
+2023-05-12T00:18:28.725724505: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:18:28.726277764: La hormiga HC0001 termina de comer
+2023-05-12T00:18:28.727524377: La hormiga HC0002 coge una unidad de comida. Quedan 19 unidades.
+2023-05-12T00:18:28.728189060: La hormiga HC0001 entra en la zona de descanso
+2023-05-12T00:18:28.728674364: La hormiga HC0003 coge una unidad de comida. Quedan 18 unidades.
+2023-05-12T00:18:28.822116420: La hormiga HO0001 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:18:28.824224812: La hormiga HO0001 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:29.198234502: La hormiga HO0003 coge cinco elementos de comida del exterior
+2023-05-12T00:18:29.299414285: La hormiga HO0003 vuelve a la Colonia.
+2023-05-12T00:18:29.300357093: La hormiga HO0003 entra al almacén de comida
+2023-05-12T00:18:29.537501961: La hormiga HO0002 termina de comer
+2023-05-12T00:18:29.537775925: La hormiga HO0004 termina de comer
+2023-05-12T00:18:29.538739532: La hormiga HO0002 entra en la zona de descanso
+2023-05-12T00:18:29.539249084: La hormiga HO0004 entra en la zona de descanso
+2023-05-12T00:18:30.539889194: La hormiga HO0002 sale de la zona de descanso
+2023-05-12T00:18:30.540045461: La hormiga HO0004 sale de la zona de descanso
+2023-05-12T00:18:30.540532504: La hormiga HO0002 entra al almacén de comida
+2023-05-12T00:18:30.540677627: La hormiga HO0004 entra al almacén de comida
+2023-05-12T00:18:30.671900638: La hormiga HO0007 coge cinco elementos de comida del exterior
+2023-05-12T00:18:30.772780235: La hormiga HO0007 vuelve a la Colonia.
+2023-05-12T00:18:30.773535012: La hormiga HO0007 entra al almacén de comida
+2023-05-12T00:18:30.863521255: La hormiga HO0010 accede al túnel de entrada.
+2023-05-12T00:18:30.964500273: La hormiga HO0010 entra al almacén de comida
+2023-05-12T00:18:32.148114118: La hormiga HS0003 sale de la zona de instrucción.
+2023-05-12T00:18:32.149980560: La hormiga HS0003 entra en la zona de descanso
+2023-05-12T00:18:32.159743803: La hormiga HO0005 deja 5 unidades de comida en el almacén. Hay 15 unidades.
+2023-05-12T00:18:32.160748730: La hormiga HO0005 va a comer.
+2023-05-12T00:18:32.161777753: La hormiga HO0005 coge una unidad de comida. Quedan 17 unidades.
+2023-05-12T00:18:32.659705665: La hormiga HC0002 termina de comer
+2023-05-12T00:18:32.662316992: La hormiga HC0002 entra en la zona de descanso
+2023-05-12T00:18:32.729837830: La hormiga HC0001 sale de la zona de descanso
+2023-05-12T00:18:32.730179889: La hormiga HC0001 va a comer.
+2023-05-12T00:18:32.731220516: La hormiga HC0001 coge una unidad de comida. Quedan 16 unidades.
+2023-05-12T00:18:32.925403273: La hormiga HO0001 coge cinco elementos de comida del exterior
+2023-05-12T00:18:33.026690415: La hormiga HO0001 vuelve a la Colonia.
+2023-05-12T00:18:33.028747876: La hormiga HO0001 entra al almacén de comida
+2023-05-12T00:18:33.335388064: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:18:33.336275716: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:18:33.481214189: La hormiga HC0003 termina de comer
+2023-05-12T00:18:33.481985332: La hormiga HC0003 entra en la zona de descanso
+2023-05-12T00:18:33.982536702: La hormiga HO0011 accede al túnel de entrada.
+2023-05-12T00:18:34.082939421: La hormiga HO0011 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:34.151980561: La hormiga HS0003 sale de la zona de descanso
+2023-05-12T00:18:34.152369129: La hormiga HS0003 entra en la zona de instrucción.
+2023-05-12T00:18:34.219822068: La hormiga HO0009 deja 5 unidades de comida en el almacén. Hay 20 unidades.
+2023-05-12T00:18:34.220475596: La hormiga HO0009 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:34.302680654: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:18:34.303635858: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:18:35.162240925: La hormiga HO0005 termina de comer
+2023-05-12T00:18:35.162979794: La hormiga HO0005 entra en la zona de descanso
+2023-05-12T00:18:35.337473277: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:18:35.337801163: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:18:35.910639116: La hormiga HO0006 coge 5 unidades de comida del almacén. Hay 15 unidades.
+2023-05-12T00:18:36.163643117: La hormiga HO0005 sale de la zona de descanso
+2023-05-12T00:18:36.163868979: La hormiga HO0005 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:36.270922346: La hormiga HO0012 accede al túnel de entrada.
+2023-05-12T00:18:36.305092704: La hormiga HS0001 sale de la zona de descanso
+2023-05-12T00:18:36.305390561: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:18:36.371923106: La hormiga HO0012 entra al almacén de comida
+2023-05-12T00:18:36.665041765: La hormiga HC0002 sale de la zona de descanso
+2023-05-12T00:18:36.665729938: La hormiga HC0002 va a comer.
+2023-05-12T00:18:36.668100857: La hormiga HC0002 coge una unidad de comida. Quedan 15 unidades.
+2023-05-12T00:18:36.812729117: La hormiga HC0001 termina de comer
+2023-05-12T00:18:36.813455475: La hormiga HC0001 entra en la zona de descanso
+2023-05-12T00:18:37.345634029: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:18:37.346270194: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:18:37.482923165: La hormiga HC0003 sale de la zona de descanso
+2023-05-12T00:18:37.483201132: La hormiga HC0003 va a comer.
+2023-05-12T00:18:37.577276954: La hormiga HO0008 coge 5 unidades de comida del almacén. Hay 10 unidades.
+2023-05-12T00:18:38.184659123: La hormiga HO0011 coge cinco elementos de comida del exterior
+2023-05-12T00:18:38.286014390: La hormiga HO0011 vuelve a la Colonia.
+2023-05-12T00:18:38.286558322: La hormiga HO0011 entra al almacén de comida
+2023-05-12T00:18:38.321718670: La hormiga HO0009 coge cinco elementos de comida del exterior
+2023-05-12T00:18:38.422980262: La hormiga HO0009 vuelve a la Colonia.
+2023-05-12T00:18:38.423764328: La hormiga HO0009 entra al almacén de comida
+2023-05-12T00:18:38.588349688: La hormiga HS0003 sale de la zona de instrucción.
+2023-05-12T00:18:38.591976486: La hormiga HS0003 entra en la zona de descanso
+2023-05-12T00:18:38.839276896: La hormiga HO0006 deja 5 unidades de comida en la zona para comer. Hay 20 unidades.
+2023-05-12T00:18:38.839847836: La hormiga HO0006 va a comer.
+2023-05-12T00:18:38.840411136: La hormiga HC0003 coge una unidad de comida. Quedan 19 unidades.
+2023-05-12T00:18:38.841283355: La hormiga HO0006 coge una unidad de comida. Quedan 18 unidades.
+2023-05-12T00:18:39.347020277: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:18:39.347354393: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:18:39.444409621: La hormiga HS0004 accede al túnel de entrada.
+2023-05-12T00:18:39.544931064: La hormiga HS0004 entra en la colonia.
+2023-05-12T00:18:39.546602624: La hormiga HS0004 entra en la zona de instrucción.
+2023-05-12T00:18:40.225595752: La hormiga HO0008 deja 5 unidades de comida en la zona para comer. Hay 23 unidades.
+2023-05-12T00:18:40.226064790: La hormiga HO0008 entra al almacén de comida
+2023-05-12T00:18:40.264822626: La hormiga HO0005 coge cinco elementos de comida del exterior
+2023-05-12T00:18:40.365909500: La hormiga HO0005 vuelve a la Colonia.
+2023-05-12T00:18:40.594189663: La hormiga HS0003 sale de la zona de descanso
+2023-05-12T00:18:40.594625146: La hormiga HS0003 entra en la zona de instrucción.
+2023-05-12T00:18:40.757245675: La hormiga HO0003 deja 5 unidades de comida en el almacén. Hay 15 unidades.
+2023-05-12T00:18:40.758093014: La hormiga HO0003 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:40.758234020: La hormiga HO0005 entra al almacén de comida
+2023-05-12T00:18:40.814107025: La hormiga HC0001 sale de la zona de descanso
+2023-05-12T00:18:40.814335404: La hormiga HC0001 va a comer.
+2023-05-12T00:18:40.814827279: La hormiga HC0001 coge una unidad de comida. Quedan 22 unidades.
+2023-05-12T00:18:41.162117637: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:18:41.162707400: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:18:41.317240163: La hormiga HC0002 termina de comer
+2023-05-12T00:18:41.318108437: La hormiga HC0002 entra en la zona de descanso
+2023-05-12T00:18:41.841876510: La hormiga HO0006 termina de comer
+2023-05-12T00:18:41.842988623: La hormiga HO0006 entra en la zona de descanso
+2023-05-12T00:18:42.190084985: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:18:42.191206807: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:18:42.324490650: La hormiga HO0004 coge 5 unidades de comida del almacén. Hay 10 unidades.
+2023-05-12T00:18:42.332957209: La hormiga HC0004 accede al túnel de entrada.
+2023-05-12T00:18:42.433437136: La hormiga HC0004 entra en la colonia.
+2023-05-12T00:18:42.433648984: La hormiga HC0004 va a comer.
+2023-05-12T00:18:42.434185588: La hormiga HC0004 coge una unidad de comida. Quedan 21 unidades.
+2023-05-12T00:18:42.843797052: La hormiga HO0006 sale de la zona de descanso
+2023-05-12T00:18:42.844521311: La hormiga HO0006 entra al almacén de comida
+2023-05-12T00:18:43.163438010: La hormiga HS0001 sale de la zona de descanso
+2023-05-12T00:18:43.163780427: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:18:43.573967791: La hormiga HC0003 termina de comer
+2023-05-12T00:18:43.575171612: La hormiga HC0003 entra en la zona de descanso
+2023-05-12T00:18:43.652244934: La hormiga HO0002 coge 5 unidades de comida del almacén. Hay 5 unidades.
+2023-05-12T00:18:44.135963635: La hormiga HO0013 accede al túnel de entrada.
+2023-05-12T00:18:44.191930544: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:18:44.192109487: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:18:44.236740200: La hormiga HO0013 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:44.795128413: La hormiga HS0004 sale de la zona de instrucción.
+2023-05-12T00:18:44.796110354: La hormiga HS0004 entra en la zona de descanso
+2023-05-12T00:18:44.859430962: La hormiga HO0003 coge cinco elementos de comida del exterior
+2023-05-12T00:18:44.960451312: La hormiga HO0003 vuelve a la Colonia.
+2023-05-12T00:18:44.961642899: La hormiga HO0003 entra al almacén de comida
+2023-05-12T00:18:45.221388873: La hormiga HC0001 termina de comer
+2023-05-12T00:18:45.222122588: La hormiga HC0001 entra en la zona de descanso
+2023-05-12T00:18:45.242528781: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:18:45.243577749: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:18:45.318833023: La hormiga HC0002 sale de la zona de descanso
+2023-05-12T00:18:45.319160498: La hormiga HC0002 va a comer.
+2023-05-12T00:18:46.211445358: La hormiga HS0003 sale de la zona de instrucción.
+2023-05-12T00:18:46.212230871: La hormiga HS0003 entra en la zona de descanso
+2023-05-12T00:18:46.555127768: La hormiga HO0007 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:18:46.556078287: La hormiga HO0007 va a comer.
+2023-05-12T00:18:46.796783995: La hormiga HS0004 sale de la zona de descanso
+2023-05-12T00:18:46.797038656: La hormiga HS0004 entra en la zona de instrucción.
+2023-05-12T00:18:46.824040102: La hormiga HO0004 deja 5 unidades de comida en la zona para comer. Hay 26 unidades.
+2023-05-12T00:18:46.824855228: La hormiga HC0002 coge una unidad de comida. Quedan 25 unidades.
+2023-05-12T00:18:46.824841833: La hormiga HO0004 entra al almacén de comida
+2023-05-12T00:18:47.246038463: La hormiga HS0001 sale de la zona de descanso
+2023-05-12T00:18:47.246914199: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:18:47.418592242: La hormiga HC0004 termina de comer
+2023-05-12T00:18:47.419637604: La hormiga HC0004 entra en la zona de descanso
+2023-05-12T00:18:47.452639581: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:18:47.453406673: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:18:47.494835688: La hormiga HO0014 accede al túnel de entrada.
+2023-05-12T00:18:47.576000376: La hormiga HC0003 sale de la zona de descanso
+2023-05-12T00:18:47.576302067: La hormiga HC0003 va a comer.
+2023-05-12T00:18:47.703490748: La hormiga HO0010 coge 5 unidades de comida del almacén. Hay 5 unidades.
+2023-05-12T00:18:47.706428087: La hormiga HO0014 entra al almacén de comida
+2023-05-12T00:18:48.097653865: La hormiga HO0002 deja 5 unidades de comida en la zona para comer. Hay 30 unidades.
+2023-05-12T00:18:48.098209051: La hormiga HO0007 coge una unidad de comida. Quedan 29 unidades.
+2023-05-12T00:18:48.098587103: La hormiga HC0003 coge una unidad de comida. Quedan 28 unidades.
+2023-05-12T00:18:48.212962886: La hormiga HS0003 sale de la zona de descanso
+2023-05-12T00:18:48.213402041: La hormiga HS0003 entra en la zona de instrucción.
+2023-05-12T00:18:48.337792279: La hormiga HO0013 coge cinco elementos de comida del exterior
+2023-05-12T00:18:48.438758799: La hormiga HO0013 vuelve a la Colonia.
+2023-05-12T00:18:49.222764461: La hormiga HC0001 sale de la zona de descanso
+2023-05-12T00:18:49.222964363: La hormiga HC0001 va a comer.
+2023-05-12T00:18:49.223353276: La hormiga HC0001 coge una unidad de comida. Quedan 27 unidades.
+2023-05-12T00:18:49.426123292: La hormiga HO0015 accede al túnel de entrada.
+2023-05-12T00:18:49.454863932: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:18:49.455755731: La hormiga HS0002 va a comer.
+2023-05-12T00:18:49.527136770: La hormiga HO0015 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:49.752701501: La hormiga HS0004 sale de la zona de instrucción.
+2023-05-12T00:18:49.753917277: La hormiga HS0004 entra en la zona de descanso
+2023-05-12T00:18:50.043627558: La hormiga HC0002 termina de comer
+2023-05-12T00:18:50.045410021: La hormiga HC0002 entra en la zona de descanso
+2023-05-12T00:18:50.477699202: La hormiga HS0004 deja de descansar y se va a luchar.
+2023-05-12T00:18:50.578179242: La hormiga HC0001 deja de comer y se va al refugio.
+2023-05-12T00:18:50.578241111: La hormiga HC0003 deja de comer y se va al refugio.
+2023-05-12T00:18:50.578451664: La hormiga HC0002 deja de descansar y se va al refugio.
+2023-05-12T00:18:50.578555961: La hormiga HC0004 deja de descansar y se va al refugio.
+2023-05-12T00:18:50.874700087: La hormiga HO0010 deja 5 unidades de comida en la zona para comer. Hay 32 unidades.
+2023-05-12T00:18:50.876268606: La hormiga HS0002 coge una unidad de comida. Quedan 31 unidades.
+2023-05-12T00:18:51.098615218: La hormiga HO0001 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:18:51.098621860: La hormiga HO0007 termina de comer
+2023-05-12T00:18:51.099185543: La hormiga HO0001 va a comer.
+2023-05-12T00:18:51.099194195: La hormiga HO0007 entra en la zona de descanso
+2023-05-12T00:18:51.099282853: La hormiga HO0002 entra al almacén de comida
+2023-05-12T00:18:51.099554362: La hormiga HO0001 coge una unidad de comida. Quedan 30 unidades.
+2023-05-12T00:18:51.648691299: La hormiga HS0005 accede al túnel de entrada.
+2023-05-12T00:18:51.749441269: La hormiga HS0005 entra en la colonia.
+2023-05-12T00:18:51.751519703: La hormiga HS0005 entra en la zona de instrucción.
+2023-05-12T00:18:52.099958880: La hormiga HO0007 sale de la zona de descanso
+2023-05-12T00:18:52.100406228: La hormiga HO0007 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:52.479422850: La hormiga HO0012 coge 5 unidades de comida del almacén. Hay 5 unidades.
+2023-05-12T00:18:52.480335390: La hormiga HO0013 entra al almacén de comida
+2023-05-12T00:18:53.073032849: La hormiga HC0005 accede al túnel de entrada.
+2023-05-12T00:18:53.173554185: La hormiga HC0005 entra en la colonia.
+2023-05-12T00:18:53.629105994: La hormiga HO0015 coge cinco elementos de comida del exterior
+2023-05-12T00:18:53.730776621: La hormiga HO0015 vuelve a la Colonia.
+2023-05-12T00:18:54.099879868: La hormiga HO0001 termina de comer
+2023-05-12T00:18:54.100846502: La hormiga HO0001 entra en la zona de descanso
+2023-05-12T00:18:55.016091404: La hormiga HO0011 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:18:55.016564930: La hormiga HO0011 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:55.016656459: La hormiga HO0010 entra al almacén de comida
+2023-05-12T00:18:55.101894070: La hormiga HO0001 sale de la zona de descanso
+2023-05-12T00:18:55.103300659: La hormiga HO0001 sale a por comida por el túnel de salida 2.
+2023-05-12T00:18:56.140882018: La hormiga HO0016 accede al túnel de entrada.
+2023-05-12T00:18:56.201378987: La hormiga HO0007 coge cinco elementos de comida del exterior
+2023-05-12T00:18:56.342010232: La hormiga HO0007 vuelve a la Colonia.
+2023-05-12T00:18:57.342673824: La hormiga HO0012 deja 5 unidades de comida en la zona para comer. Hay 35 unidades.
+2023-05-12T00:18:58.312694735: La hormiga HO0009 deja 5 unidades de comida en el almacén. Hay 15 unidades.
+2023-05-12T00:18:58.313494262: La hormiga HO0009 va a comer.
+2023-05-12T00:18:58.313598827: La hormiga HO0015 entra al almacén de comida
+2023-05-12T00:18:58.313994814: La hormiga HO0009 coge una unidad de comida. Quedan 34 unidades.
+2023-05-12T00:18:58.968097125: La hormiga HO0017 accede al túnel de entrada.
+2023-05-12T00:18:59.068706790: La hormiga HO0017 sale a por comida por el túnel de salida 1.
+2023-05-12T00:18:59.118005797: La hormiga HO0011 coge cinco elementos de comida del exterior
+2023-05-12T00:18:59.204853520: La hormiga HO0001 coge cinco elementos de comida del exterior
+2023-05-12T00:18:59.218767389: La hormiga HO0011 vuelve a la Colonia.
+2023-05-12T00:18:59.319734679: La hormiga HO0001 vuelve a la Colonia.
+2023-05-12T00:18:59.516512880: La hormiga HO0008 coge 5 unidades de comida del almacén. Hay 10 unidades.
+2023-05-12T00:18:59.517089966: La hormiga HO0016 entra al almacén de comida
+2023-05-12T00:18:59.533659720: La hormiga HS0005 sale de la zona de instrucción.
+2023-05-12T00:18:59.534092822: La hormiga HS0005 entra en la zona de descanso
+2023-05-12T00:19:00.307910724: La hormiga HO0018 accede al túnel de entrada.
+2023-05-12T00:19:01.314378169: La hormiga HO0009 termina de comer
+2023-05-12T00:19:01.314926435: La hormiga HO0009 entra en la zona de descanso
+2023-05-12T00:19:01.535064619: La hormiga HS0005 sale de la zona de descanso
+2023-05-12T00:19:01.535297475: La hormiga HS0005 entra en la zona de instrucción.
+2023-05-12T00:19:01.800895787: La hormiga HS0006 accede al túnel de entrada.
+2023-05-12T00:19:01.856338555: La hormiga HO0008 deja 5 unidades de comida en la zona para comer. Hay 39 unidades.
+2023-05-12T00:19:01.856817343: La hormiga HO0008 va a comer.
+2023-05-12T00:19:01.859068847: La hormiga HO0008 coge una unidad de comida. Quedan 38 unidades.
+2023-05-12T00:19:01.901439244: La hormiga HS0006 entra en la colonia.
+2023-05-12T00:19:01.901775802: La hormiga HS0006 entra en la zona de instrucción.
+2023-05-12T00:19:02.315432496: La hormiga HO0009 sale de la zona de descanso
+2023-05-12T00:19:02.315645844: La hormiga HO0009 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:02.485355064: La hormiga HO0005 deja 5 unidades de comida en el almacén. Hay 15 unidades.
+2023-05-12T00:19:02.485903730: La hormiga HO0005 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:02.486066043: La hormiga HO0007 entra al almacén de comida
+2023-05-12T00:19:03.169947899: La hormiga HO0017 coge cinco elementos de comida del exterior
+2023-05-12T00:19:03.270569241: La hormiga HO0017 vuelve a la Colonia.
+2023-05-12T00:19:03.270927753: La hormiga HC0006 accede al túnel de entrada.
+2023-05-12T00:19:03.371445391: La hormiga HC0006 entra en la colonia.
+2023-05-12T00:19:03.931982491: La hormiga HO0006 coge 5 unidades de comida del almacén. Hay 10 unidades.
+2023-05-12T00:19:03.932697120: La hormiga HO0012 entra al almacén de comida
+2023-05-12T00:19:04.695663467: La hormiga HS0006 sale de la zona de instrucción.
+2023-05-12T00:19:04.696722952: La hormiga HS0006 entra en la zona de descanso
+2023-05-12T00:19:04.860651641: La hormiga HO0008 termina de comer
+2023-05-12T00:19:04.862052608: La hormiga HO0008 entra en la zona de descanso
+2023-05-12T00:19:05.862689740: La hormiga HO0008 sale de la zona de descanso
+2023-05-12T00:19:06.416873773: La hormiga HO0009 coge cinco elementos de comida del exterior
+2023-05-12T00:19:06.517697597: La hormiga HO0009 vuelve a la Colonia.
+2023-05-12T00:19:06.586754675: La hormiga HO0005 coge cinco elementos de comida del exterior
+2023-05-12T00:19:06.687542290: La hormiga HO0005 vuelve a la Colonia.
+2023-05-12T00:19:06.697428841: La hormiga HS0006 sale de la zona de descanso
+2023-05-12T00:19:06.697712067: La hormiga HS0006 entra en la zona de instrucción.
+2023-05-12T00:19:07.493445669: La hormiga HO0003 deja 5 unidades de comida en el almacén. Hay 15 unidades.
+2023-05-12T00:19:07.494637514: La hormiga HO0003 va a comer.
+2023-05-12T00:19:07.495092886: La hormiga HO0011 entra al almacén de comida
+2023-05-12T00:19:07.680749553: La hormiga HO0006 deja 5 unidades de comida en la zona para comer. Hay 43 unidades.
+2023-05-12T00:19:07.681599318: La hormiga HO0003 coge una unidad de comida. Quedan 42 unidades.
+2023-05-12T00:19:08.582736042: La hormiga HO0004 coge 5 unidades de comida del almacén. Hay 10 unidades.
+2023-05-12T00:19:08.594322587: La hormiga HO0001 entra al almacén de comida
+2023-05-12T00:19:08.689890142: La hormiga HS0005 sale de la zona de instrucción.
+2023-05-12T00:19:08.690437392: La hormiga HS0005 entra en la zona de descanso
+2023-05-12T00:19:09.541393619: La hormiga HS0006 sale de la zona de instrucción.
+2023-05-12T00:19:09.541946672: La hormiga HS0006 entra en la zona de descanso
+2023-05-12T00:19:10.315156364: La hormiga HO0014 coge 5 unidades de comida del almacén. Hay 5 unidades.
+2023-05-12T00:19:10.316123525: La hormiga HO0018 entra al almacén de comida
+2023-05-12T00:19:10.682220501: La hormiga HO0003 termina de comer
+2023-05-12T00:19:10.683036286: La hormiga HO0003 entra en la zona de descanso
+2023-05-12T00:19:10.691296756: La hormiga HS0005 sale de la zona de descanso
+2023-05-12T00:19:10.691699210: La hormiga HS0005 entra en la zona de instrucción.
+2023-05-12T00:19:10.877942222: La hormiga HC0003 termina de comer
+2023-05-12T00:19:10.878037034: La hormiga HS0002 termina de comer
+2023-05-12T00:19:10.878113059: La hormiga HC0002 sale de la zona de descanso
+2023-05-12T00:19:10.878125066: La hormiga HS0003 deja de hacer instrucción y se va a luchar
+2023-05-12T00:19:10.878207236: La hormiga HS0001 deja de hacer instrucción y se va a luchar
+2023-05-12T00:19:10.878236294: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:19:10.878250499: La hormiga HC0002 va a comer.
+2023-05-12T00:19:10.878260594: La hormiga HS0003 sale de la zona de instrucción.
+2023-05-12T00:19:10.878345834: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:19:10.878588054: La hormiga HC0002 coge una unidad de comida. Quedan 41 unidades.
+2023-05-12T00:19:10.878631184: La hormiga HS0004 sale de la zona de descanso
+2023-05-12T00:19:10.878718056: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:19:10.878753925: La hormiga HS0004 entra en la zona de instrucción.
+2023-05-12T00:19:10.879051928: La hormiga HC0004 sale de la zona de descanso
+2023-05-12T00:19:10.879065166: La hormiga HC0005 va a comer.
+2023-05-12T00:19:10.879185579: La hormiga HC0004 va a comer.
+2023-05-12T00:19:10.879205085: La hormiga HS0003 entra en la zona de descanso
+2023-05-12T00:19:10.879235695: La hormiga HC0006 va a comer.
+2023-05-12T00:19:10.879412399: La hormiga HC0005 coge una unidad de comida. Quedan 40 unidades.
+2023-05-12T00:19:10.879658472: La hormiga HC0001 termina de comer
+2023-05-12T00:19:10.879688313: La hormiga HC0003 entra en la zona de descanso
+2023-05-12T00:19:10.880049422: La hormiga HC0004 coge una unidad de comida. Quedan 39 unidades.
+2023-05-12T00:19:10.880165360: La hormiga HC0001 entra en la zona de descanso
+2023-05-12T00:19:10.880615865: La hormiga HC0006 coge una unidad de comida. Quedan 38 unidades.
+2023-05-12T00:19:12.203164086: La hormiga HO0002 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:19:12.852419172: La hormiga HO0004 deja 5 unidades de comida en la zona para comer. Hay 43 unidades.
+2023-05-12T00:19:14.971313644: La hormiga HO0004 va a comer.
+2023-05-12T00:19:14.971560164: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:19:14.971659367: La hormiga HO0017 entra al almacén de comida
+2023-05-12T00:19:14.972268839: La hormiga HS0006 sale de la zona de descanso
+2023-05-12T00:19:14.972483192: La hormiga HS0006 entra en la zona de instrucción.
+2023-05-12T00:19:14.972612628: La hormiga HO0003 sale de la zona de descanso
+2023-05-12T00:19:14.972742381: La hormiga HO0003 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:14.972975591: La hormiga HC0006 termina de comer
+2023-05-12T00:19:14.973371988: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:19:14.973429686: La hormiga HC0006 entra en la zona de descanso
+2023-05-12T00:19:14.973742420: La hormiga HS0003 sale de la zona de descanso
+2023-05-12T00:19:14.973921708: La hormiga HS0003 entra en la zona de instrucción.
+2023-05-12T00:19:14.974577041: La hormiga HS0001 sale de la zona de descanso
+2023-05-12T00:19:14.974640579: La hormiga HC0004 termina de comer
+2023-05-12T00:19:14.974818922: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:19:14.975177660: La hormiga HC0004 entra en la zona de descanso
+2023-05-12T00:19:14.977794526: La hormiga HC0001 sale de la zona de descanso
+2023-05-12T00:19:14.977715565: La hormiga HC0003 sale de la zona de descanso
+2023-05-12T00:19:14.978133844: La hormiga HC0001 va a comer.
+2023-05-12T00:19:14.979606087: La hormiga HC0003 va a comer.
+2023-05-12T00:19:15.248921390: La hormiga HO0013 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:19:15.249423305: La hormiga HO0013 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:15.249540537: La hormiga HO0008 entra al almacén de comida
+2023-05-12T00:19:16.120573486: La hormiga HO0014 deja 5 unidades de comida en la zona para comer. Hay 48 unidades.
+2023-05-12T00:19:16.121043913: La hormiga HO0004 coge una unidad de comida. Quedan 47 unidades.
+2023-05-12T00:19:16.121546930: La hormiga HC0001 coge una unidad de comida. Quedan 46 unidades.
+2023-05-12T00:19:16.121893161: La hormiga HC0003 coge una unidad de comida. Quedan 45 unidades.
+2023-05-12T00:19:16.477537862: La hormiga HO0010 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:19:19.073306255: La hormiga HO0003 coge cinco elementos de comida del exterior
+2023-05-12T00:19:19.153447499: La hormiga HC0002 termina de comer
+2023-05-12T00:19:19.153448768: La hormiga HC0005 termina de comer
+2023-05-12T00:19:19.153473357: La hormiga HS0005 sale de la zona de instrucción.
+2023-05-12T00:19:19.153996508: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:19:19.154017979: La hormiga HC0005 entra en la zona de descanso
+2023-05-12T00:19:19.154089222: La hormiga HO0009 entra al almacén de comida
+2023-05-12T00:19:19.154183571: La hormiga HS0004 sale de la zona de instrucción.
+2023-05-12T00:19:19.154341995: La hormiga HS0005 entra en la zona de descanso
+2023-05-12T00:19:19.154478427: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:19:19.154512525: La hormiga HS0003 sale de la zona de instrucción.
+2023-05-12T00:19:19.154786505: La hormiga HS0004 entra en la zona de descanso
+2023-05-12T00:19:19.154849463: La hormiga HS0006 sale de la zona de instrucción.
+2023-05-12T00:19:19.154856126: La hormiga HS0003 entra en la zona de descanso
+2023-05-12T00:19:19.155275670: La hormiga HO0004 termina de comer
+2023-05-12T00:19:19.155516920: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:19:19.155786134: La hormiga HC0002 entra en la zona de descanso
+2023-05-12T00:19:19.155750148: La hormiga HC0006 sale de la zona de descanso
+2023-05-12T00:19:19.155990851: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:19:19.156108862: La hormiga HO0004 entra en la zona de descanso
+2023-05-12T00:19:19.156037450: La hormiga HC0006 va a comer.
+2023-05-12T00:19:19.156434228: La hormiga HS0006 entra en la zona de descanso
+2023-05-12T00:19:19.156513766: La hormiga HC0004 sale de la zona de descanso
+2023-05-12T00:19:19.156658673: La hormiga HC0004 va a comer.
+2023-05-12T00:19:19.255451939: La hormiga HO0003 vuelve a la Colonia.
+2023-05-12T00:19:19.349978129: La hormiga HO0013 coge cinco elementos de comida del exterior
+2023-05-12T00:19:19.450643661: La hormiga HO0013 vuelve a la Colonia.
+2023-05-12T00:19:19.503262926: La hormiga HO0015 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:19:19.503631352: La hormiga HO0015 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:19.503790648: La hormiga HO0005 entra al almacén de comida
+2023-05-12T00:19:20.201905438: La hormiga HO0002 deja 5 unidades de comida en la zona para comer. Hay 50 unidades.
+2023-05-12T00:19:20.202290746: La hormiga HC0006 coge una unidad de comida. Quedan 49 unidades.
+2023-05-12T00:19:20.202650930: La hormiga HC0004 coge una unidad de comida. Quedan 48 unidades.
+2023-05-12T00:19:21.099630283: La hormiga HC0001 termina de comer
+2023-05-12T00:19:21.099630535: La hormiga HC0003 termina de comer
+2023-05-12T00:19:21.099633468: La hormiga HO0002 va a comer.
+2023-05-12T00:19:21.099943511: La hormiga HO0004 sale de la zona de descanso
+2023-05-12T00:19:21.100328630: La hormiga HC0003 entra en la zona de descanso
+2023-05-12T00:19:21.100393026: La hormiga HC0001 entra en la zona de descanso
+2023-05-12T00:19:21.124926949: La hormiga HO0016 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:19:21.125479663: La hormiga HO0006 entra al almacén de comida
+2023-05-12T00:19:21.155674504: La hormiga HS0005 sale de la zona de descanso
+2023-05-12T00:19:21.155748295: La hormiga HS0003 sale de la zona de descanso
+2023-05-12T00:19:21.155909511: La hormiga HS0005 entra en la zona de instrucción.
+2023-05-12T00:19:21.156086173: La hormiga HS0003 entra en la zona de instrucción.
+2023-05-12T00:19:21.156348833: La hormiga HS0004 sale de la zona de descanso
+2023-05-12T00:19:21.156353260: La hormiga HS0001 sale de la zona de descanso
+2023-05-12T00:19:21.156481436: La hormiga HS0004 entra en la zona de instrucción.
+2023-05-12T00:19:21.156495904: La hormiga HS0001 va a comer.
+2023-05-12T00:19:21.156773133: La hormiga HS0006 sale de la zona de descanso
+2023-05-12T00:19:21.156923649: La hormiga HS0006 entra en la zona de instrucción.
+2023-05-12T00:19:22.750176112: La hormiga HO0010 deja 5 unidades de comida en la zona para comer. Hay 53 unidades.
+2023-05-12T00:19:22.751079955: La hormiga HO0002 coge una unidad de comida. Quedan 52 unidades.
+2023-05-12T00:19:22.751786483: La hormiga HS0001 coge una unidad de comida. Quedan 51 unidades.
+2023-05-12T00:19:23.330763585: La hormiga HO0007 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:19:23.604840550: La hormiga HO0015 coge cinco elementos de comida del exterior
+2023-05-12T00:19:24.306932165: La hormiga HO0010 va a comer.
+2023-05-12T00:19:24.307040153: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:19:24.307214384: La hormiga HC0005 sale de la zona de descanso
+2023-05-12T00:19:24.307335581: La hormiga HC0005 va a comer.
+2023-05-12T00:19:24.307329850: La hormiga HO0014 entra al almacén de comida
+2023-05-12T00:19:24.307411993: La hormiga HC0002 sale de la zona de descanso
+2023-05-12T00:19:24.307548243: La hormiga HC0002 va a comer.
+2023-05-12T00:19:24.307727898: La hormiga HO0007 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:24.307856399: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:19:24.332552767: La hormiga HO0012 coge 5 unidades de comida del almacén. Hay 0 unidades.
+2023-05-12T00:19:24.333178025: La hormiga HO0003 entra al almacén de comida
+2023-05-12T00:19:24.403998284: La hormiga HC0004 termina de comer
+2023-05-12T00:19:24.404571927: La hormiga HC0004 entra en la zona de descanso
+2023-05-12T00:19:24.407349837: La hormiga HO0015 vuelve a la Colonia.
+2023-05-12T00:19:24.614754771: La hormiga HC0006 termina de comer
+2023-05-12T00:19:24.616015054: La hormiga HC0006 entra en la zona de descanso
+2023-05-12T00:19:25.321732543: La hormiga HO0016 deja 5 unidades de comida en la zona para comer. Hay 56 unidades.
+2023-05-12T00:19:25.323640615: La hormiga HC0005 coge una unidad de comida. Quedan 55 unidades.
+2023-05-12T00:19:25.324540074: La hormiga HC0002 coge una unidad de comida. Quedan 54 unidades.
+2023-05-12T00:19:25.326092627: La hormiga HO0010 coge una unidad de comida. Quedan 53 unidades.
+2023-05-12T00:19:26.646404522: La hormiga HO0011 deja 5 unidades de comida en el almacén. Hay 5 unidades.
+2023-05-12T00:19:28.408408160: La hormiga HO0007 coge cinco elementos de comida del exterior
+2023-05-12T00:19:29.186088486: La hormiga HO0001 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:19:29.188826094: La hormiga HS0005 sale de la zona de instrucción.
+2023-05-12T00:19:29.188918907: La hormiga HO0002 termina de comer
+2023-05-12T00:19:29.188996674: La hormiga HS0001 termina de comer
+2023-05-12T00:19:29.189110968: La hormiga HC0003 sale de la zona de descanso
+2023-05-12T00:19:29.189201062: La hormiga HC0003 va a comer.
+2023-05-12T00:19:29.189233691: La hormiga HO0002 entra en la zona de descanso
+2023-05-12T00:19:29.189318023: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:19:29.189427502: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:19:29.189016933: La hormiga HS0003 sale de la zona de instrucción.
+2023-05-12T00:19:29.189579561: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:19:29.189644187: La hormiga HS0005 entra en la zona de descanso
+2023-05-12T00:19:29.189766043: La hormiga HS0003 entra en la zona de descanso
+2023-05-12T00:19:29.189830617: La hormiga HS0006 sale de la zona de instrucción.
+2023-05-12T00:19:29.189885646: La hormiga HS0004 sale de la zona de instrucción.
+2023-05-12T00:19:29.189992708: La hormiga HO0011 va a comer.
+2023-05-12T00:19:29.190046213: La hormiga HO0010 termina de comer
+2023-05-12T00:19:29.190137079: La hormiga HS0006 entra en la zona de descanso
+2023-05-12T00:19:29.190214654: La hormiga HC0001 sale de la zona de descanso
+2023-05-12T00:19:29.190279582: La hormiga HC0004 sale de la zona de descanso
+2023-05-12T00:19:29.190309653: La hormiga HC0001 va a comer.
+2023-05-12T00:19:29.190377859: La hormiga HC0004 va a comer.
+2023-05-12T00:19:29.190476678: La hormiga HO0013 entra al almacén de comida
+2023-05-12T00:19:29.190797929: La hormiga HC0006 sale de la zona de descanso
+2023-05-12T00:19:29.190903842: La hormiga HC0006 va a comer.
+2023-05-12T00:19:29.191071828: La hormiga HO0010 entra en la zona de descanso
+2023-05-12T00:19:29.191098683: La hormiga HC0005 termina de comer
+2023-05-12T00:19:29.191335033: La hormiga HC0005 entra en la zona de descanso
+2023-05-12T00:19:29.191481397: La hormiga HO0001 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:29.191556175: La hormiga HS0004 entra en la zona de descanso
+2023-05-12T00:19:29.191686707: La hormiga HO0004 entra al almacén de comida
+2023-05-12T00:19:29.290870472: La hormiga HO0007 vuelve a la Colonia.
+2023-05-12T00:19:29.562428615: La hormiga HC0002 termina de comer
+2023-05-12T00:19:29.563472323: La hormiga HC0002 entra en la zona de descanso
+2023-05-12T00:19:31.042672817: La hormiga HO0018 coge 5 unidades de comida del almacén. Hay 5 unidades.
+2023-05-12T00:19:31.101547419: La hormiga HO0012 deja 5 unidades de comida en la zona para comer. Hay 58 unidades.
+2023-05-12T00:19:31.102167900: La hormiga HC0003 coge una unidad de comida. Quedan 57 unidades.
+2023-05-12T00:19:31.102561135: La hormiga HO0011 coge una unidad de comida. Quedan 56 unidades.
+2023-05-12T00:19:31.102901919: La hormiga HC0001 coge una unidad de comida. Quedan 55 unidades.
+2023-05-12T00:19:31.103141561: La hormiga HC0006 coge una unidad de comida. Quedan 54 unidades.
+2023-05-12T00:19:31.103437070: La hormiga HC0004 coge una unidad de comida. Quedan 53 unidades.
+2023-05-12T00:19:33.292051917: La hormiga HO0001 coge cinco elementos de comida del exterior
+2023-05-12T00:19:33.835257719: La hormiga HO0017 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:19:33.984758287: La hormiga HO0002 sale de la zona de descanso
+2023-05-12T00:19:33.984733535: La hormiga HO0012 va a comer.
+2023-05-12T00:19:33.984866552: La hormiga HO0015 entra al almacén de comida
+2023-05-12T00:19:33.984957432: La hormiga HO0010 sale de la zona de descanso
+2023-05-12T00:19:33.985037152: La hormiga HC0002 sale de la zona de descanso
+2023-05-12T00:19:33.985111966: La hormiga HS0005 sale de la zona de descanso
+2023-05-12T00:19:33.985134546: La hormiga HC0002 va a comer.
+2023-05-12T00:19:33.985195271: La hormiga HS0005 entra en la zona de instrucción.
+2023-05-12T00:19:33.985314149: La hormiga HO0017 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:33.985434675: La hormiga HO0012 coge una unidad de comida. Quedan 52 unidades.
+2023-05-12T00:19:33.985593902: La hormiga HO0010 entra al almacén de comida
+2023-05-12T00:19:33.985837945: La hormiga HC0005 sale de la zona de descanso
+2023-05-12T00:19:33.985970323: La hormiga HS0004 sale de la zona de descanso
+2023-05-12T00:19:33.986025508: La hormiga HC0005 va a comer.
+2023-05-12T00:19:33.985892676: La hormiga HC0002 coge una unidad de comida. Quedan 51 unidades.
+2023-05-12T00:19:33.986087768: La hormiga HS0004 entra en la zona de instrucción.
+2023-05-12T00:19:33.986313508: La hormiga HC0005 coge una unidad de comida. Quedan 50 unidades.
+2023-05-12T00:19:33.986468516: La hormiga HS0006 sale de la zona de descanso
+2023-05-12T00:19:33.986552479: La hormiga HS0006 entra en la zona de instrucción.
+2023-05-12T00:19:33.986663952: La hormiga HS0003 sale de la zona de descanso
+2023-05-12T00:19:33.986744232: La hormiga HS0003 va a comer.
+2023-05-12T00:19:33.986920477: La hormiga HS0003 coge una unidad de comida. Quedan 49 unidades.
+2023-05-12T00:19:34.085184533: La hormiga HO0001 vuelve a la Colonia.
+2023-05-12T00:19:34.102885607: La hormiga HO0011 termina de comer
+2023-05-12T00:19:34.103711657: La hormiga HO0011 entra en la zona de descanso
+2023-05-12T00:19:34.167033696: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:19:34.167479807: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:19:34.178185114: La hormiga HC0001 termina de comer
+2023-05-12T00:19:34.178864248: La hormiga HC0001 entra en la zona de descanso
+2023-05-12T00:19:34.572831568: La hormiga HC0004 termina de comer
+2023-05-12T00:19:34.573683985: La hormiga HC0004 entra en la zona de descanso
+2023-05-12T00:19:34.758419683: La hormiga HC0006 termina de comer
+2023-05-12T00:19:34.759276291: La hormiga HC0006 entra en la zona de descanso
+2023-05-12T00:19:35.801248718: La hormiga HO0008 coge 5 unidades de comida del almacén. Hay 5 unidades.
+2023-05-12T00:19:38.085917899: La hormiga HO0017 coge cinco elementos de comida del exterior
+2023-05-12T00:19:38.734927280: La hormiga HS0002 sale de la zona de instrucción.
+2023-05-12T00:19:38.734894016: La hormiga HC0003 termina de comer
+2023-05-12T00:19:38.735064617: La hormiga HO0011 sale de la zona de descanso
+2023-05-12T00:19:38.735098826: La hormiga HO0012 termina de comer
+2023-05-12T00:19:38.735160194: La hormiga HO0011 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:38.735244935: La hormiga HO0016 entra al almacén de comida
+2023-05-12T00:19:38.735272172: La hormiga HS0002 entra en la zona de descanso
+2023-05-12T00:19:38.735370275: La hormiga HS0001 sale de la zona de descanso
+2023-05-12T00:19:38.735498171: La hormiga HC0003 entra en la zona de descanso
+2023-05-12T00:19:38.735528044: La hormiga HS0001 entra en la zona de instrucción.
+2023-05-12T00:19:38.735632244: La hormiga HS0003 termina de comer
+2023-05-12T00:19:38.735660912: La hormiga HO0012 entra en la zona de descanso
+2023-05-12T00:19:38.735828350: La hormiga HS0003 entra en la zona de instrucción.
+2023-05-12T00:19:38.735864339: La hormiga HC0001 sale de la zona de descanso
+2023-05-12T00:19:38.735937566: La hormiga HC0001 va a comer.
+2023-05-12T00:19:38.736156107: La hormiga HC0005 termina de comer
+2023-05-12T00:19:38.736490122: La hormiga HC0005 entra en la zona de descanso
+2023-05-12T00:19:38.736702667: La hormiga HS0006 sale de la zona de instrucción.
+2023-05-12T00:19:38.737109588: La hormiga HC0004 sale de la zona de descanso
+2023-05-12T00:19:38.737235052: La hormiga HC0002 termina de comer
+2023-05-12T00:19:38.737252925: La hormiga HC0004 va a comer.
+2023-05-12T00:19:38.737555822: La hormiga HC0002 entra en la zona de descanso
+2023-05-12T00:19:38.737806883: La hormiga HS0006 entra en la zona de descanso
+2023-05-12T00:19:38.759991994: La hormiga HC0006 sale de la zona de descanso
+2023-05-12T00:19:38.760213341: La hormiga HC0006 va a comer.
+2023-05-12T00:19:38.835988501: La hormiga HO0017 vuelve a la Colonia.
+2023-05-12T00:19:39.081826161: La hormiga HS0005 sale de la zona de instrucción.
+2023-05-12T00:19:39.083025503: La hormiga HS0005 entra en la zona de descanso
+2023-05-12T00:19:39.550228605: La hormiga HO0009 deja 5 unidades de comida en el almacén. Hay 10 unidades.
+2023-05-12T00:19:39.550641607: La hormiga HO0009 sale a por comida por el túnel de salida 1.
+2023-05-12T00:19:39.550815011: La hormiga HO0007 entra al almacén de comida
+2023-05-12T00:19:39.736178413: La hormiga HO0012 sale de la zona de descanso
+2023-05-12T00:19:39.863539007: La hormiga HS0004 sale de la zona de instrucción.
+2023-05-12T00:19:39.864376539: La hormiga HS0004 entra en la zona de descanso
+2023-05-12T00:19:40.641328864: La hormiga HO0018 deja 5 unidades de comida en la zona para comer. Hay 54 unidades.
+2023-05-12T00:19:40.641664290: La hormiga HC0001 coge una unidad de comida. Quedan 53 unidades.
+2023-05-12T00:19:40.641883305: La hormiga HC0004 coge una unidad de comida. Quedan 52 unidades.
+2023-05-12T00:19:40.642198886: La hormiga HC0006 coge una unidad de comida. Quedan 51 unidades.
+2023-05-12T00:19:40.736346929: La hormiga HS0002 sale de la zona de descanso
+2023-05-12T00:19:40.736602587: La hormiga HS0002 entra en la zona de instrucción.
+2023-05-12T00:19:40.738421193: La hormiga HS0006 sale de la zona de descanso
+2023-05-12T00:19:40.739528900: La hormiga HS0006 entra en la zona de instrucción.
+2023-05-12T00:19:41.083971871: La hormiga HS0005 sale de la zona de descanso
+2023-05-12T00:19:41.084227800: La hormiga HS0005 entra en la zona de instrucción.
+2023-05-12T00:19:41.865044742: La hormiga HS0004 sale de la zona de descanso
+2023-05-12T00:19:41.865191772: La hormiga HS0004 entra en la zona de instrucción.
+2023-05-12T00:19:42.255864468: La hormiga HO0005 deja 5 unidades de comida en el almacén. Hay 15 unidades.
+2023-05-12T00:19:42.256413831: La hormiga HO0005 va a comer.
+2023-05-12T00:19:42.256504434: La hormiga HO0002 entra al almacén de comida
+2023-05-12T00:19:42.546963532: La hormiga HS0001 sale de la zona de instrucción.
+2023-05-12T00:19:42.547966602: La hormiga HS0001 entra en la zona de descanso
+2023-05-12T00:19:42.736594017: La hormiga HC0003 sale de la zona de descanso
+2023-05-12T00:19:42.737409859: La hormiga HC0003 va a comer.
+2023-05-12T00:19:42.738081234: La hormiga HC0005 sale de la zona de descanso
+2023-05-12T00:19:42.738267406: La hormiga HC0002 sale de la zona de descanso
+2023-05-12T00:19:42.738509717: La hormiga HC0002 va a comer.
+2023-05-12T00:19:42.738516488: La hormiga HC0005 va a comer.
+2023-05-12T00:19:42.835706552: La hormiga HO0011 coge cinco elementos de comida del exterior
+2023-05-12T00:19:42.936505994: La hormiga HO0011 vuelve a la Colonia.
+2023-05-12T00:19:43.028290875: La hormiga HO0008 deja 5 unidades de comida en la zona para comer. Hay 56 unidades.
+2023-05-12T00:19:43.028640409: La hormiga HO0005 coge una unidad de comida. Quedan 55 unidades.
+2023-05-12T00:19:43.028929468: La hormiga HC0003 coge una unidad de comida. Quedan 54 unidades.
+2023-05-12T00:19:43.029150656: La hormiga HC0005 coge una unidad de comida. Quedan 53 unidades.
+2023-05-12T00:19:43.029453605: La hormiga HC0002 coge una unidad de comida. Quedan 52 unidades.

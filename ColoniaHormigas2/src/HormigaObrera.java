@@ -1,4 +1,13 @@
+import java.io.IOException;
 import java.util.Random;
+
+/**
+ * HORMIGA OBRERA
+ * Llegarán a la colonia.
+ * Entonces, si su número es impar, saldrán al exterior a recoger 
+ * cinco elementos de comida, tardando en ello 
+ * 
+ */
 
 public class HormigaObrera extends Hormiga {
     Random r = new Random();
@@ -17,67 +26,69 @@ public class HormigaObrera extends Hormiga {
     }
     
     public void run() {
-        int num = this.getNum();
-        this.getPaso().mirar();
-        this.getC().entrar(this);
-        if ((num % 2) == 0) {
-            while(true) {
-                for (int i = 0; i < 2; i++) {
+        try {
+            int num = this.getNum();
+            this.getPaso().mirar();
+            this.getC().entrar(this);
+            if ((num % 2) == 0) {
+                while(true) {
+                    for (int i = 0; i < 2; i++) {
+                        this.getPaso().mirar();
+                        this.getC().entrarAlmacenComida(this);
+                        this.getPaso().mirar();
+                        this.getC().cogerComidaDelAlmacen(this);
+                        this.getPaso().mirar();
+                        this.getC().salirAlmacenComida(this);
+                        this.getPaso().mirar();
+                        this.getC().viajarZonaComer(this);
+                        this.getPaso().mirar();
+                        this.getC().depositarComidaZonaComer(this);
+                    }
+                    //Tras hacer 10 iteraciones, comer y descansar
                     this.getPaso().mirar();
-                    this.getC().entrarAlmacenComida(this);
+                    this.getC().entrarEnZonaComer(this);
                     this.getPaso().mirar();
-                    this.getC().cogerComidaDelAlmacen(this);
+                    this.getC().comer(this);
                     this.getPaso().mirar();
-                    this.getC().salirAlmacenComida(this);
+                    this.getC().salirDeZonaComer(this);
                     this.getPaso().mirar();
-                    this.getC().viajarZonaComer(this);
+                    this.getC().entrarEnZonaDescanso(this);
                     this.getPaso().mirar();
-                    this.getC().depositarComidaZonaComer(this);
+                    this.getC().descansar(this);
+                    this.getPaso().mirar();
+                    this.getC().salirDeZonaDescanso(this);
                 }
-                //Tras hacer 10 iteraciones, comer y descansar
-                this.getPaso().mirar();
-                this.getC().entrarEnZonaComer(this);
-                this.getPaso().mirar();
-                this.getC().comer(this);
-                this.getPaso().mirar();
-                this.getC().salirDeZonaComer(this);
-                this.getPaso().mirar();
-                this.getC().entrarEnZonaDescanso(this);
-                this.getPaso().mirar();
-                this.getC().descansar(this);
-                this.getPaso().mirar();
-                this.getC().salirDeZonaDescanso(this);
-            }
-        } else {
-            while(true) {
-                for (int i = 0; i < 2; i++) {
+            } else {
+                while(true) {
+                    for (int i = 0; i < 2; i++) {
+                        this.getPaso().mirar();
+                        this.getC().salirPorComida(this);
+                        this.getPaso().mirar();
+                        this.getC().cogerElementosComida(this);
+                        this.getPaso().mirar();
+                        this.getC().volverConComida(this); //Vuelve a la Colonia
+                        this.getPaso().mirar();
+                        this.getC().entrarAlmacenComida(this);
+                        this.getPaso().mirar();
+                        this.getC().dejarComidaEnAlmacen(this);
+                        this.getPaso().mirar();
+                        this.getC().salirAlmacenComida(this);
+                    }
+                    //Tras hacer 10 iteraciones, comer y descansar
                     this.getPaso().mirar();
-                    this.getC().salirPorComida(this);
+                    this.getC().entrarEnZonaComer(this);
                     this.getPaso().mirar();
-                    this.getC().cogerElementosComida(this);
+                    this.getC().comer(this);
                     this.getPaso().mirar();
-                    this.getC().volverConComida(this); //Vuelve a la Colonia
+                    this.getC().salirDeZonaComer(this);
                     this.getPaso().mirar();
-                    this.getC().entrarAlmacenComida(this);
+                    this.getC().entrarEnZonaDescanso(this);
                     this.getPaso().mirar();
-                    this.getC().dejarComidaEnAlmacen(this);
+                    this.getC().descansar(this);
                     this.getPaso().mirar();
-                    this.getC().salirAlmacenComida(this);
+                    this.getC().salirDeZonaDescanso(this);
                 }
-                //Tras hacer 10 iteraciones, comer y descansar
-                this.getPaso().mirar();
-                this.getC().entrarEnZonaComer(this);
-                this.getPaso().mirar();
-                this.getC().comer(this);
-                this.getPaso().mirar();
-                this.getC().salirDeZonaComer(this);
-                this.getPaso().mirar();
-                this.getC().entrarEnZonaDescanso(this);
-                this.getPaso().mirar();
-                this.getC().descansar(this);
-                this.getPaso().mirar();
-                this.getC().salirDeZonaDescanso(this);
             }
-        }
+        } catch (IOException ex) {}
     }
 }

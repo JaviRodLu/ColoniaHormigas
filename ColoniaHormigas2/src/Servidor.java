@@ -1,3 +1,4 @@
+import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.util.Random;
 import java.util.logging.Level;
@@ -6,18 +7,28 @@ import java.util.logging.Logger;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+/**
+ * Clase en la que comienza la ejecución de la aplicación.
+ * Se encarga de crear los hilos (hormigas) y el recurso compartido (colonia)
+ * por ellos.
+ * Además, para la parte distribuida, implementa el servidor
+ * al que se conectarán los clientes.
+ */
+
 public class Servidor extends javax.swing.JFrame {
     Implementacion impl;
     Colonia c;
     Paso paso;
     Registry reg;
+    GeneradorLog genLog;
 
     /**
      * Creates new form Servidor
      */
-    public Servidor() {
+    public Servidor() throws IOException {
         initComponents();
-        c = new Colonia(jTextFieldHormigasBuscandoComida,jTextFieldHormigasAlmacen,
+        genLog = new GeneradorLog();
+        c = new Colonia(genLog, jTextFieldHormigasBuscandoComida,jTextFieldHormigasAlmacen,
                 jTextFieldComidaAlmacen, jTextFieldHormigasLlevandoComida, jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldHormigasDescansando, jTextFieldHormigasHaciendoInstruccion,jTextFieldHormigasRepeliendoInsecto, jTextFieldRefugio);
         paso = new Paso();
         try {
@@ -38,7 +49,7 @@ public class Servidor extends javax.swing.JFrame {
             int numHormigas = 0;
             @Override
             public void run() {
-                while (numHormigas < 20) {
+                while (numHormigas < 30) {
                 try {
                 HormigaObrera ho1 = new HormigaObrera(numObrera, c, paso);
                 ho1.start();
@@ -305,7 +316,6 @@ public class Servidor extends javax.swing.JFrame {
     private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed
         // TODO add your handling code here:
         c.interrumpirHormigas();
-        c.interrumpirCrias();
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 
     /**
@@ -338,7 +348,9 @@ public class Servidor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Servidor().setVisible(true);
+                try {
+                    new Servidor().setVisible(true);
+                } catch (IOException e) {}
             }
         });
 
