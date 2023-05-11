@@ -1,4 +1,3 @@
-import java.rmi.registry.LocateRegistry;
 import java.rmi.*;
 
 public class Cliente extends javax.swing.JFrame {
@@ -11,19 +10,21 @@ public class Cliente extends javax.swing.JFrame {
         initComponents();
         try {
             interfaz = (Interfaz) Naming.lookup("Colonia");
-            
-            numObrerasExterior = interfaz.getNumObrerasExterior();
-            jTextFieldNumObrerasExterior.setText(numObrerasExterior + "");
-            numObrerasInterior = interfaz.getNumObrerasInterior();
-            jTextFieldNumObrerasInterior.setText(numObrerasInterior + "");
-            numSoldadoInstruccion = interfaz.getNumSoldadoInstruccion();
-            jTextFieldNumSoldadoInstruccion.setText(numSoldadoInstruccion + "");
-            numSoldadoRepeliendoInvasion = interfaz.getNumSoldadoRepeliendoInvasion();
-            jTextFieldNumSoldadoLuchando.setText(numSoldadoRepeliendoInvasion + "");
-            numCriasZonaComer = interfaz.getNumCriasZonaComer();
-            jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
-            numCriasRefugio = interfaz.getNumCriasRefugio();
-            jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
+            while (true) {
+                numObrerasExterior = interfaz.getNumObrerasExterior();
+                numObrerasInterior = interfaz.getNumObrerasInterior();
+                numSoldadoInstruccion = interfaz.getNumSoldadoInstruccion();
+                numSoldadoRepeliendoInvasion = interfaz.getNumSoldadoRepeliendoInvasion();
+                numCriasZonaComer = interfaz.getNumCriasZonaComer();
+                numCriasRefugio = interfaz.getNumCriasRefugio();
+                jTextFieldNumObrerasExterior.setText(numObrerasExterior + "");
+                jTextFieldNumObrerasInterior.setText(numObrerasInterior + "");
+                jTextFieldNumSoldadoInstruccion.setText(numSoldadoInstruccion + "");
+                jTextFieldNumSoldadoLuchando.setText(numSoldadoRepeliendoInvasion + "");
+                jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
+                jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
+                Thread.sleep(1000);
+            }
         } catch (Exception e) {
             System.err.println("Error en el cliente RMI: " + e.getMessage());
             e.printStackTrace();
@@ -52,6 +53,7 @@ public class Cliente extends javax.swing.JFrame {
         jTextFieldNumCriasComiendo = new javax.swing.JTextField();
         jTextFieldNumCriasRefugio = new javax.swing.JTextField();
         jButtonGenerarAmenaza = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +73,13 @@ public class Cliente extends javax.swing.JFrame {
         jButtonGenerarAmenaza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGenerarAmenazaActionPerformed(evt);
+            }
+        });
+
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonActualizarActionPerformed(evt);
             }
         });
 
@@ -97,14 +106,21 @@ public class Cliente extends javax.swing.JFrame {
                     .addComponent(jTextFieldNumSoldadoLuchando))
                 .addGap(112, 112, 112))
             .addGroup(layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(jButtonGenerarAmenaza)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(jButtonGenerarAmenaza))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(jButtonActualizar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addContainerGap()
+                .addComponent(jButtonActualizar)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNumObrerasExterior)
                     .addComponent(jTextFieldNumObrerasExterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -140,8 +156,29 @@ public class Cliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             interfaz.generarInsectoInvasor();
-        } catch (RemoteException ex) {}
+        } catch (RemoteException e) {
+            System.out.println("Excepción: " + e.getMessage());
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        // TODO add your handling code here:
+        try {
+            numObrerasExterior = interfaz.getNumObrerasExterior();
+            numObrerasInterior = interfaz.getNumObrerasInterior();
+            numSoldadoInstruccion = interfaz.getNumSoldadoInstruccion();
+            numSoldadoRepeliendoInvasion = interfaz.getNumSoldadoRepeliendoInvasion();
+            numCriasZonaComer = interfaz.getNumCriasZonaComer();
+            numCriasRefugio = interfaz.getNumCriasRefugio();
+            jTextFieldNumObrerasExterior.setText(numObrerasExterior + "");
+            jTextFieldNumObrerasInterior.setText(numObrerasInterior + "");
+            jTextFieldNumSoldadoInstruccion.setText(numSoldadoInstruccion + "");
+            jTextFieldNumSoldadoLuchando.setText(numSoldadoRepeliendoInvasion + "");
+            jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
+            jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
+        } catch (RemoteException ex) {}
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,6 +216,7 @@ public class Cliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonGenerarAmenaza;
     private javax.swing.JLabel jLabelNumCriasComiendo;
     private javax.swing.JLabel jLabelNumCriasRefugio;
