@@ -10,21 +10,36 @@ public class Cliente extends javax.swing.JFrame {
         initComponents();
         try {
             interfaz = (Interfaz) Naming.lookup("Colonia");
-            while (true) {
-                numObrerasExterior = interfaz.getNumObrerasExterior();
-                numObrerasInterior = interfaz.getNumObrerasInterior();
-                numSoldadoInstruccion = interfaz.getNumSoldadoInstruccion();
-                numSoldadoRepeliendoInvasion = interfaz.getNumSoldadoRepeliendoInvasion();
-                numCriasZonaComer = interfaz.getNumCriasZonaComer();
-                numCriasRefugio = interfaz.getNumCriasRefugio();
-                jTextFieldNumObrerasExterior.setText(numObrerasExterior + "");
-                jTextFieldNumObrerasInterior.setText(numObrerasInterior + "");
-                jTextFieldNumSoldadoInstruccion.setText(numSoldadoInstruccion + "");
-                jTextFieldNumSoldadoLuchando.setText(numSoldadoRepeliendoInvasion + "");
-                jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
-                jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
-                Thread.sleep(1000);
-            }
+            
+            // Crear un hilo aparte para actualizar los datos en tiempo real
+            Thread actualizacionHilo = new Thread(() -> {
+                try {
+                    while (true) {
+                        numObrerasExterior = interfaz.getNumObrerasExterior();
+                        numObrerasInterior = interfaz.getNumObrerasInterior();
+                        numSoldadoInstruccion = interfaz.getNumSoldadoInstruccion();
+                        numSoldadoRepeliendoInvasion = interfaz.getNumSoldadoRepeliendoInvasion();
+                        numCriasZonaComer = interfaz.getNumCriasZonaComer();
+                        numCriasRefugio = interfaz.getNumCriasRefugio();
+                        
+                        // Actualizar los campos de texto en la interfaz
+                        jTextFieldNumObrerasExterior.setText(numObrerasExterior + "");
+                        jTextFieldNumObrerasInterior.setText(numObrerasInterior + "");
+                        jTextFieldNumSoldadoInstruccion.setText(numSoldadoInstruccion + "");
+                        jTextFieldNumSoldadoLuchando.setText(numSoldadoRepeliendoInvasion + "");
+                        jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
+                        jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
+                        
+                        Thread.sleep(1000);
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error en el cliente RMI: " + e.getMessage());
+                    e.printStackTrace();
+                }
+            });
+            
+            // Iniciar el hilo de actualizaciÃ³n
+            actualizacionHilo.start();
         } catch (Exception e) {
             System.err.println("Error en el cliente RMI: " + e.getMessage());
             e.printStackTrace();
@@ -53,7 +68,6 @@ public class Cliente extends javax.swing.JFrame {
         jTextFieldNumCriasComiendo = new javax.swing.JTextField();
         jTextFieldNumCriasRefugio = new javax.swing.JTextField();
         jButtonGenerarAmenaza = new javax.swing.JButton();
-        jButtonActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,13 +87,6 @@ public class Cliente extends javax.swing.JFrame {
         jButtonGenerarAmenaza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGenerarAmenazaActionPerformed(evt);
-            }
-        });
-
-        jButtonActualizar.setText("Actualizar");
-        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonActualizarActionPerformed(evt);
             }
         });
 
@@ -106,21 +113,14 @@ public class Cliente extends javax.swing.JFrame {
                     .addComponent(jTextFieldNumSoldadoLuchando))
                 .addGap(112, 112, 112))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(jButtonGenerarAmenaza))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(jButtonActualizar)))
+                .addGap(193, 193, 193)
+                .addComponent(jButtonGenerarAmenaza)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonActualizar)
-                .addGap(36, 36, 36)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNumObrerasExterior)
                     .addComponent(jTextFieldNumObrerasExterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -162,24 +162,6 @@ public class Cliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 
-    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-        // TODO add your handling code here:
-        try {
-            numObrerasExterior = interfaz.getNumObrerasExterior();
-            numObrerasInterior = interfaz.getNumObrerasInterior();
-            numSoldadoInstruccion = interfaz.getNumSoldadoInstruccion();
-            numSoldadoRepeliendoInvasion = interfaz.getNumSoldadoRepeliendoInvasion();
-            numCriasZonaComer = interfaz.getNumCriasZonaComer();
-            numCriasRefugio = interfaz.getNumCriasRefugio();
-            jTextFieldNumObrerasExterior.setText(numObrerasExterior + "");
-            jTextFieldNumObrerasInterior.setText(numObrerasInterior + "");
-            jTextFieldNumSoldadoInstruccion.setText(numSoldadoInstruccion + "");
-            jTextFieldNumSoldadoLuchando.setText(numSoldadoRepeliendoInvasion + "");
-            jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
-            jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
-        } catch (RemoteException ex) {}
-    }//GEN-LAST:event_jButtonActualizarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -216,7 +198,6 @@ public class Cliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonGenerarAmenaza;
     private javax.swing.JLabel jLabelNumCriasComiendo;
     private javax.swing.JLabel jLabelNumCriasRefugio;
