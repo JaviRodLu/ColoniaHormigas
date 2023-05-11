@@ -13,8 +13,7 @@ public class Implementacion extends UnicastRemoteObject implements Interfaz {
     }
 
     public int getNumObrerasInterior() throws RemoteException {
-        //return colonia.getHormigasObrerasInterior().size();
-        return 0;
+        return colonia.getNumObrerasInterior();
     }
 
     public int getNumSoldadoInstruccion() throws RemoteException {
@@ -22,22 +21,24 @@ public class Implementacion extends UnicastRemoteObject implements Interfaz {
     }
 
     public int getNumSoldadoRepeliendoInvasion() throws RemoteException {
-        return colonia.getListaHormigasRepeliendoInsecto().lista.size();
+        if (colonia.isInvasionEnCurso()) {
+            return colonia.getListaHormigasRepeliendoInsecto().lista.size();
+        } else {
+            return 0;
+        }
     }
 
     public int getNumCriasZonaComer() throws RemoteException {
-        //return colonia.getHormigasCriasComiendo().size();
-        return 0;
+        return colonia.getNumCriasComiendo();
     }
 
     public int getNumCriasRefugio() throws RemoteException {
-        //return colonia.getHormigasCriasRefugio().size();
-        return 0;
+        return colonia.getListaHormigasRefugio().lista.size();
     }
 
     public void generarInsectoInvasor() throws RemoteException {
         colonia.interrumpirHormigas();
         colonia.interrumpirCrias();
-        
     }
+    
 }

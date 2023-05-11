@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
@@ -14,20 +13,18 @@ public class Colonia {
     Random r = new Random();
     private Semaphore tunelEntrada, tunelSalida1, tunelSalida2;
     private Semaphore semaforoAlmacenComida;
-    private Lock controlComidaAlmacen, controlComidaComer, controlInvasion;
+    private Lock controlComidaAlmacen, controlComidaComer, controlInvasion, controlObrerasInterior, controlCriasComiendo;
     private Condition sinComidaAlmacen, sinComidaComer;
     private int unidadesComidaAlmacen, unidadesComidaComer;
-    private int numObrerasInterior;
+    private int numObrerasInterior, numCriasComiendo;
     
     //Para la amenaza del insecto invasor
     private boolean invasionEnCurso;
     private boolean mensajeImpreso;
-    //private CyclicBarrier hormigasLuchando, hormigasRefugiadas;
-    private CyclicBarrier hormigasLuchando;
-    private CountDownLatch hormigasRefugiadas;
+    private CyclicBarrier hormigasLuchando, hormigasRefugiadas;    
     ArrayList<HormigaSoldado> listaHormigasSoldado;
     ArrayList<HormigaCria> listaHormigasCria;
-    Lock protegerArrayHormigasSoldado, protegerArrayHormigasCria, protegerMsjImpreso, controlObrerasInterior;
+    Lock protegerArrayHormigasSoldado, protegerArrayHormigasCria, protegerMsjImpreso;
     
     private ListaThreads listaHormigasBuscandoComida, listaHormigasAlmacen, listaHormigasLlevandoComida,
                         listaHormigasComiendo, listaHormigasDescansando, listaHormigasHaciendoInstruccion,
@@ -51,6 +48,8 @@ public class Colonia {
         this.invasionEnCurso = false;
         this.numObrerasInterior = 0;
         this.controlObrerasInterior = new ReentrantLock();
+        this.numCriasComiendo = 0;
+        this.controlCriasComiendo = new ReentrantLock();
         this.listaHormigasSoldado = new ArrayList<>();
         this.listaHormigasCria = new ArrayList<>();
         this.protegerArrayHormigasSoldado = new ReentrantLock();
@@ -89,6 +88,24 @@ public class Colonia {
         }
     }
     
+    public void entrar(HormigaObrera ho) {
+        try {
+            tunelEntrada.acquire();
+            System.out.println("La hormiga " + ho.getIdentificador() + " accede al túnel de entrada.");
+            Thread.sleep(100);
+        } catch (InterruptedException | Error ex) {}
+        finally {
+            tunelEntrada.release();
+            System.out.println("La hormiga " + ho.getIdentificador() + " entra en la colonia.");
+            controlObrerasInterior.lock();
+            try {
+                numObrerasInterior++;
+            } finally {
+                controlObrerasInterior.unlock();
+            }
+        }
+    }
+    
     public void salirPorComida(HormigaObrera ho) {
         try {
             if (tunelSalida1.tryAcquire()) {
@@ -101,6 +118,12 @@ public class Colonia {
                 System.out.println("La hormiga " + ho.getIdentificador() + " sale a por comida por el túnel de salida 2.");
                 Thread.sleep(100);
                 tunelSalida2.release();
+            }
+            controlObrerasInterior.lock();
+            try {
+                numObrerasInterior--;
+            } finally {
+                controlObrerasInterior.unlock();
             }
             listaHormigasBuscandoComida.meter(ho);
         } catch (InterruptedException | Error ex) {}
@@ -122,6 +145,12 @@ public class Colonia {
         } catch (InterruptedException | Error ex) {}
         finally {
             tunelEntrada.release();
+            controlObrerasInterior.lock();
+            try {
+                numObrerasInterior++;
+            } finally {
+                controlObrerasInterior.unlock();
+            }
         }
     } 
     
@@ -270,6 +299,12 @@ public class Colonia {
     public void entrarEnZonaComer(HormigaCria hc) {
         System.out.println("La hormiga " + hc.getIdentificador() + " va a comer.");
         listaHormigasComiendo.meter(hc);
+        controlCriasComiendo.lock();
+        try {
+            numCriasComiendo++;
+        } finally {
+            controlCriasComiendo.unlock();
+        }
     }
     
     public void comer(HormigaCria hc) {
@@ -284,6 +319,12 @@ public class Colonia {
                     + " Quedan " + unidadesComidaComer + " unidades.");
         } catch (InterruptedException | Error ex) {
             listaHormigasComiendo.sacar(hc);
+            controlCriasComiendo.lock();
+            try {
+                numCriasComiendo--;
+            } finally {
+                controlCriasComiendo.unlock();
+            }
             comprobarInvasion(hc);
         }
         finally {
@@ -293,6 +334,12 @@ public class Colonia {
             Thread.sleep(r.nextInt(3000, 5001));
         } catch (InterruptedException | Error ex) {
             listaHormigasComiendo.sacar(hc);
+            controlCriasComiendo.lock();
+            try {
+                numCriasComiendo--;
+            } finally {
+                controlCriasComiendo.unlock();
+            }
             comprobarInvasion(hc);
         }
     }
@@ -300,6 +347,12 @@ public class Colonia {
     public void salirDeZonaComer(HormigaCria hc) {
         System.out.println("La hormiga " + hc.getIdentificador() + " termina de comer");
         listaHormigasComiendo.sacar(hc);
+        controlCriasComiendo.lock();
+        try {
+            numCriasComiendo--;
+        } finally {
+            controlCriasComiendo.unlock();
+        }
     }
     
     //ZONA DE DESCANSO
@@ -384,7 +437,7 @@ public class Colonia {
     }
     
     
-    //AMENAZA INSECTO INVASOR
+//AMENAZA INSECTO INVASOR
         //Hormigas SOLDADO
     public void comprobarInvasion(HormigaSoldado hs) {
         if (invasionEnCurso) {
@@ -398,15 +451,9 @@ public class Colonia {
             return;
         }
         System.out.println("¡Invasión detectada!");
-        controlInvasion.lock();
-        try {
-            this.invasionEnCurso = true;
-        } finally {
-            controlInvasion.unlock();
-        }
+        this.invasionEnCurso = true;
         protegerArrayHormigasSoldado.lock();
         this.hormigasLuchando = new CyclicBarrier(listaHormigasSoldado.size());
-        this.hormigasRefugiadas = new CountDownLatch(listaHormigasSoldado.size());
         try {
             for (HormigaSoldado hs : listaHormigasSoldado) {
                 hs.interrupt();
@@ -421,8 +468,8 @@ public class Colonia {
                             System.out.println("La hormiga " + hs.getIdentificador() + " sale a luchar por el túnel de salida 2.");
                             Thread.sleep(100);
                             tunelSalida2.release();
-                        } 
-                    } catch (InterruptedException | Error ex) {}
+                    } 
+                    } catch (InterruptedException ex) {}
                     listaHormigasRepeliendoInsecto.meter(hs);
                     System.out.println("Hormigas listas para luchar: " + listaHormigasRepeliendoInsecto.lista.size());
                 }
@@ -436,12 +483,7 @@ public class Colonia {
         try {
             hormigasLuchando.await();
             Thread.sleep(20000);
-            controlInvasion.lock();
-            try {
-                this.invasionEnCurso = false;
-            } finally {
-                controlInvasion.lock();
-            }
+            this.invasionEnCurso = false;
             protegerMsjImpreso.lock();
             try {
                 if (!mensajeImpreso) {
@@ -452,7 +494,6 @@ public class Colonia {
                 protegerMsjImpreso.unlock();
             }
             listaHormigasRepeliendoInsecto.sacar(hs);
-            this.hormigasRefugiadas.countDown();
             protegerMsjImpreso.lock();
             try {
                 mensajeImpreso = false;
@@ -460,22 +501,23 @@ public class Colonia {
                 protegerMsjImpreso.unlock();
             }
             this.hormigasLuchando.reset();
-        } catch (InterruptedException | BrokenBarrierException | Error ex) {
+        } catch (InterruptedException | BrokenBarrierException ex) {
             Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
         //Hormigas CRÍA
-    public void comprobarInvasion(HormigaCria hc) {
+        public void comprobarInvasion(HormigaCria hc) {
         if (invasionEnCurso) {
             reunirHormigasCria(hc);
         }
     }
-	
+    
+    
     public void interrumpirCrias() {
         //Interrumpir las crías
         protegerArrayHormigasCria.lock();
-        //this.hormigasRefugiadas = new CyclicBarrier(listaHormigasCria.size());
+        this.hormigasRefugiadas = new CyclicBarrier(listaHormigasCria.size());
         try {
             for (HormigaCria hc : listaHormigasCria) {
                 hc.interrupt();
@@ -496,28 +538,15 @@ public class Colonia {
             // Las hormigas cría van al refugio y esperan allí hasta que la invasión termine
             System.out.println("La hormiga cría " + hc.getIdentificador() + " se dirige al refugio.");
             System.out.println("La hormiga cría " + hc.getIdentificador() + " está en el refugio.");
-            //Thread.sleep(20000); // Espera simulada dentro del refugio
+            Thread.sleep(20000); // Espera simulada dentro del refugio
             listaHormigasRefugio.sacar(hc);
             System.out.println("La hormiga cría " + hc.getIdentificador() + " sale del refugio.");
-            //hormigasRefugiadas.reset(); // Reinicia el ciclo para futuras invasiones
-        /*} catch (InterruptedException | BrokenBarrierException ex) {
+            hormigasRefugiadas.reset(); // Reinicia el ciclo para futuras invasiones
+        } catch (InterruptedException | BrokenBarrierException ex) {
             Logger.getLogger(Colonia.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        } catch (InterruptedException | Error ex) {}
+        }
     }
-    
-    public void refugiarNuevaCria(HormigaCria hc) {
-        try {
-            listaHormigasRefugio.meter(hc);
-            // Las hormigas cría van al refugio y esperan allí hasta que la invasión termine
-            System.out.println("La hormiga cría " + hc.getIdentificador() + " se dirige al refugio.");
-            System.out.println("La hormiga cría " + hc.getIdentificador() + " está en el refugio.");
-            hormigasRefugiadas.await();
-            listaHormigasRefugio.sacar(hc);
-            System.out.println("La hormiga cría " + hc.getIdentificador() + " sale del refugio.");
-        } catch (InterruptedException | Error ex) {}   
-    }
-    
+
     //Getters para la parte Distribuida
     public ArrayList<HormigaSoldado> getListaHormigasSoldado() {
         return listaHormigasSoldado;
@@ -559,5 +588,22 @@ public class Colonia {
         return listaHormigasRefugio;
     }
     
+    public int getNumObrerasInterior() {
+        controlObrerasInterior.lock();
+        try {
+            return numObrerasInterior;
+        } finally {
+            controlObrerasInterior.unlock();
+        }
+    }
+    
+    public int getNumCriasComiendo() {
+        controlCriasComiendo.lock();
+        try {
+            return numCriasComiendo;
+        } finally {
+            controlCriasComiendo.unlock();
+        }
+    }
     
 }

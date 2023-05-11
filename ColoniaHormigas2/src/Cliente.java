@@ -30,7 +30,7 @@ public class Cliente extends javax.swing.JFrame {
                         jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
                         jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
                         
-                        Thread.sleep(1000);
+                        Thread.sleep(500);
                     }
                 } catch (Exception e) {
                     System.err.println("Error en el cliente RMI: " + e.getMessage());
