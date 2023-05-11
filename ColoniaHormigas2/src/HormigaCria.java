@@ -17,6 +17,10 @@ public class HormigaCria extends Hormiga {
         int num = this.getNum();
         this.getPaso().mirar();
         this.getC().entrar(this);
+        if (this.getC().isInvasionEnCurso()) {
+            this.getPaso().mirar();
+            this.getC().refugiarNuevaCria(this);
+        }
         while(true) {
             while(!this.isInterrupted()) {
                 this.getPaso().mirar();
