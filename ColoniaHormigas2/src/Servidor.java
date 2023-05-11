@@ -3,24 +3,32 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Servidor extends javax.swing.JFrame {
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
+public class Servidor extends javax.swing.JFrame {
+    Implementacion impl;
     Colonia c;
     Paso paso;
+    Registry reg;
 
     /**
      * Creates new form Servidor
      */
     public Servidor() {
         initComponents();
-        /*c = new Colonia(jTextFieldHormigasBuscandoComida, jTextFieldHormigasRepeliendoInsecto,
-                jTextFieldHormigasAlmacen, jTextFieldHormigasLlevandoComida,
-                jTextFieldHormigasHaciendoInstruccion,
-                jTextFieldHormigasDescansando, jTextFieldComidaAlmacen,
-                jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldRefugio);*/
         c = new Colonia(jTextFieldHormigasBuscandoComida,jTextFieldHormigasAlmacen,
                 jTextFieldComidaAlmacen, jTextFieldHormigasLlevandoComida, jTextFieldComidaZonaComer, jTextFieldZonaComer, jTextFieldHormigasDescansando, jTextFieldHormigasHaciendoInstruccion,jTextFieldHormigasRepeliendoInsecto, jTextFieldRefugio);
         paso = new Paso();
+        try {
+            impl = new Implementacion(c);
+            reg = LocateRegistry.createRegistry(1099);
+            reg.rebind("Colonia", impl);
+            System.out.println("Servidor RMI iniciado");
+        } catch (Exception e) {
+            System.out.println("Error del servidor RMI: " + e.getMessage());
+            e.printStackTrace();
+        }
         
         new Thread(new Runnable() {
             Random r = new Random();

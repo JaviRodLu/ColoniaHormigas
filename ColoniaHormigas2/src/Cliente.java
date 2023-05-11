@@ -1,10 +1,33 @@
-public class Cliente extends javax.swing.JFrame {
+import java.rmi.registry.LocateRegistry;
+import java.rmi.*;
 
+public class Cliente extends javax.swing.JFrame {
+    Interfaz interfaz;
+    int numObrerasExterior, numObrerasInterior, numSoldadoInstruccion, numSoldadoRepeliendoInvasion, numCriasZonaComer, numCriasRefugio;
     /**
      * Creates new form Cliente
      */
     public Cliente() {
         initComponents();
+        try {
+            interfaz = (Interfaz) Naming.lookup("Colonia");
+            
+            numObrerasExterior = interfaz.getNumObrerasExterior();
+            jTextFieldNumObrerasExterior.setText(numObrerasExterior + "");
+            numObrerasInterior = interfaz.getNumObrerasInterior();
+            jTextFieldNumObrerasInterior.setText(numObrerasInterior + "");
+            numSoldadoInstruccion = interfaz.getNumSoldadoInstruccion();
+            jTextFieldNumSoldadoInstruccion.setText(numSoldadoInstruccion + "");
+            numSoldadoRepeliendoInvasion = interfaz.getNumSoldadoRepeliendoInvasion();
+            jTextFieldNumSoldadoLuchando.setText(numSoldadoRepeliendoInvasion + "");
+            numCriasZonaComer = interfaz.getNumCriasZonaComer();
+            jTextFieldNumCriasComiendo.setText(numCriasZonaComer + "");
+            numCriasRefugio = interfaz.getNumCriasRefugio();
+            jTextFieldNumCriasRefugio.setText(numCriasRefugio + "");
+        } catch (Exception e) {
+            System.err.println("Error en el cliente RMI: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -115,6 +138,9 @@ public class Cliente extends javax.swing.JFrame {
 
     private void jButtonGenerarAmenazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGenerarAmenazaActionPerformed
         // TODO add your handling code here:
+        try {
+            interfaz.generarInsectoInvasor();
+        } catch (RemoteException ex) {}
     }//GEN-LAST:event_jButtonGenerarAmenazaActionPerformed
 
     /**
