@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Cliente" package="" visibility="public" xPosition="46.0" yPosition="435.0">
+      <Fields>
+        <Field name="interfaz" type="Interfaz" visibility="package"/>
+        <Field name="numObrerasExterior" type="int" visibility="package"/>
+        <Field name="jButtonGenerarAmenaza" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabelNumCriasComiendo" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelNumCriasRefugio" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelNumObrerasExterior" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelNumObrerasInterior" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelNumSoldadoInstruccion" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelNumSoldadoLuchando" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextFieldNumCriasComiendo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldNumCriasRefugio" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldNumObrerasExterior" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldNumObrerasInterior" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldNumSoldadoInstruccion" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldNumSoldadoLuchando" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButtonGenerarAmenazaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Colonia" package="" visibility="public" xPosition="317.0" yPosition="1521.0">
+      <Fields>
+        <Field name="generadorLog" type="GeneradorLog" visibility="package"/>
+        <Field name="r" type="Random" visibility="package"/>
+        <Field name="tunelEntrada" type="Semaphore" visibility="private"/>
+        <Field name="semaforoAlmacenComida" type="Semaphore" visibility="private"/>
+        <Field name="controlComidaAlmacen" type="Lock" visibility="private"/>
+        <Field name="sinComidaAlmacen" type="Condition" visibility="private"/>
+        <Field name="unidadesComidaAlmacen" type="int" visibility="private"/>
+        <Field name="numObrerasInterior" type="int" visibility="private"/>
+        <Field name="invasionEnCurso" type="boolean" visibility="private"/>
+        <Field name="mensajeImpreso" type="boolean" visibility="private"/>
+        <Field name="hormigasLuchando" type="CyclicBarrier" visibility="private"/>
+        <Field name="hormigasRefugiadas" type="CountDownLatch" visibility="private"/>
+        <Field name="listaHormigasSoldado" type="ArrayList&lt;HormigaSoldado&gt;" visibility="package"/>
+        <Field name="listaHormigasCria" type="ArrayList&lt;HormigaCria&gt;" visibility="package"/>
+        <Field name="protegerArrayHormigasSoldado" type="Lock" visibility="package"/>
+        <Field name="listaHormigasBuscandoComida" type="ListaThreads" visibility="private"/>
+        <Field name="campoUnidadesComidaAlmacen" type="JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GeneradorLog" name="gl"/>
+          <Argument type="JTextField" name="campoHormigasBuscandoComida"/>
+          <Argument type="JTextField" name="campoHormigasAlmacen"/>
+          <Argument type="JTextField" name="campoUnidadesComidaAlmacen"/>
+          <Argument type="JTextField" name="campoHormigasLlevandoComida"/>
+          <Argument type="JTextField" name="campoUnidadesComidaComer"/>
+          <Argument type="JTextField" name="campoHormigasComiendo"/>
+          <Argument type="JTextField" name="campoHormigasDescansando"/>
+          <Argument type="JTextField" name="campoHormigasInstruccion"/>
+          <Argument type="JTextField" name="campoHormigasRepeliendoInsecto"/>
+          <Argument type="JTextField" name="campoRefugio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isInvasionEnCurso" returnType="boolean" visibility="public"/>
+        <Method name="entrar" returnType="void" visibility="public">
+          <Argument type="Hormiga" name="h"/>
+        </Method>
+        <Method name="entrar" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="salirPorComida" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="cogerElementosComida" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="volverConComida" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="entrarAlmacenComida" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="dejarComidaEnAlmacen" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="cogerComidaDelAlmacen" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="salirAlmacenComida" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="viajarZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="depositarComidaZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="entrarEnZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="comer" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="salirDeZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="entrarEnZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="comer" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="salirDeZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="entrarEnZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="comer" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="salirDeZonaComer" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="entrarEnZonaDescanso" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="descansar" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="salirDeZonaDescanso" returnType="void" visibility="public">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="entrarEnZonaDescanso" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="descansar" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="salirDeZonaDescanso" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="entrarEnZonaDescanso" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="descansar" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="salirDeZonaDescanso" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="entrarEnZonaInstruccion" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="hacerInstruccion" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="salirDeZonaInstruccion" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="comprobarInvasion" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="interrumpirHormigas" returnType="void" visibility="public"/>
+        <Method name="reunirHormigas" returnType="void" visibility="public">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="comprobarInvasion" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="reunirHormigasCria" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="reunirCriasNuevas" returnType="void" visibility="public">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="getListaHormigasSoldado" returnType="ArrayList&lt;HormigaSoldado&gt;" visibility="public"/>
+        <Method name="getListaHormigasCria" returnType="ArrayList&lt;HormigaCria&gt;" visibility="public"/>
+        <Method name="getListaHormigasBuscandoComida" returnType="ListaThreads" visibility="public"/>
+        <Method name="getListaHormigasAlmacen" returnType="ListaThreads" visibility="public"/>
+        <Method name="getListaHormigasLlevandoComida" returnType="ListaThreads" visibility="public"/>
+        <Method name="getListaHormigasComiendo" returnType="ListaThreads" visibility="public"/>
+        <Method name="getListaHormigasDescansando" returnType="ListaThreads" visibility="public"/>
+        <Method name="getListaHormigasHaciendoInstruccion" returnType="ListaThreads" visibility="public"/>
+        <Method name="getListaHormigasRepeliendoInsecto" returnType="ListaThreads" visibility="public"/>
+        <Method name="getListaHormigasRefugio" returnType="ListaThreads" visibility="public"/>
+        <Method name="getNumObrerasInterior" returnType="int" visibility="public"/>
+        <Method name="getNumCriasComiendo" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GeneradorLog" package="" visibility="public" xPosition="1585.0" yPosition="493.0">
+      <Fields>
+        <Field name="archivo" type="FileWriter" visibility="package"/>
+        <Field name="imprimir" type="PrintWriter" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="imprimir" returnType="void" visibility="public">
+          <Argument type="String" name="mensaje"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hormiga" package="" visibility="public" xPosition="2367.0" yPosition="435.0">
+      <Fields>
+        <Field name="identificador" type="String" visibility="private"/>
+        <Field name="num" type="int" visibility="private"/>
+        <Field name="c" type="Colonia" visibility="private"/>
+        <Field name="paso" type="Paso" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="num"/>
+          <Argument type="Colonia" name="colonia"/>
+          <Argument type="Paso" name="p"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdentificador" returnType="String" visibility="public"/>
+        <Method name="setIdentificador" returnType="void" visibility="public">
+          <Argument type="String" name="identificador"/>
+        </Method>
+        <Method name="getNum" returnType="int" visibility="public"/>
+        <Method name="setNum" returnType="void" visibility="public">
+          <Argument type="int" name="num"/>
+        </Method>
+        <Method name="getC" returnType="Colonia" visibility="public"/>
+        <Method name="setC" returnType="void" visibility="public">
+          <Argument type="Colonia" name="c"/>
+        </Method>
+        <Method name="getPaso" returnType="Paso" visibility="public"/>
+        <Method name="setPaso" returnType="void" visibility="public">
+          <Argument type="Paso" name="paso"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HormigaCria" package="" visibility="public" xPosition="2205.0" yPosition="1025.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="num"/>
+          <Argument type="Colonia" name="colonia"/>
+          <Argument type="Paso" name="paso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HormigaObrera" package="" visibility="public" xPosition="1811.0" yPosition="777.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="num"/>
+          <Argument type="Colonia" name="colonia"/>
+          <Argument type="Paso" name="paso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HormigaSoldado" package="" visibility="public" xPosition="2608.0" yPosition="1000.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="num"/>
+          <Argument type="Colonia" name="colonia"/>
+          <Argument type="Paso" name="paso"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Implementacion" package="" visibility="public" xPosition="512.0" yPosition="864.0">
+      <Fields>
+        <Field name="colonia" type="Colonia" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Colonia" name="colonia"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumObrerasExterior" returnType="int" visibility="public"/>
+        <Method name="getNumObrerasInterior" returnType="int" visibility="public"/>
+        <Method name="getNumSoldadoInstruccion" returnType="int" visibility="public"/>
+        <Method name="getNumSoldadoRepeliendoInvasion" returnType="int" visibility="public"/>
+        <Method name="getNumCriasZonaComer" returnType="int" visibility="public"/>
+        <Method name="getNumCriasRefugio" returnType="int" visibility="public"/>
+        <Method name="generarInsectoInvasor" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ListaThreads" package="" visibility="public" xPosition="1018.0" yPosition="418.0">
+      <Fields>
+        <Field name="lista" type="ArrayList&lt;Hormiga&gt;" visibility="package"/>
+        <Field name="campo" type="JTextField" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="JTextField" name="campo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="meter" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="meter" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="meter" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="sacar" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="HormigaSoldado" name="hs"/>
+        </Method>
+        <Method name="sacar" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="HormigaObrera" name="ho"/>
+        </Method>
+        <Method name="sacar" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="HormigaCria" name="hc"/>
+        </Method>
+        <Method name="imprimir" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Paso" package="" visibility="public" xPosition="1000.0" yPosition="1900.0">
+      <Fields>
+        <Field name="cerrado" type="boolean" visibility="private"/>
+        <Field name="cerrojo" type="Lock" visibility="private"/>
+        <Field name="parar" type="Condition" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mirar" returnType="void" visibility="public"/>
+        <Method name="abrir" returnType="void" visibility="public"/>
+        <Method name="cerrar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Servidor" package="" visibility="public" xPosition="940.0" yPosition="777.0">
+      <Fields>
+        <Field name="impl" type="Implementacion" visibility="package"/>
+        <Field name="c" type="Colonia" visibility="package"/>
+        <Field name="paso" type="Paso" visibility="package"/>
+        <Field name="reg" type="Registry" visibility="package"/>
+        <Field name="genLog" type="GeneradorLog" visibility="package"/>
+        <Field name="jButtonDetener" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonGenerarAmenaza" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonReanudar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabelComidaAlmacen" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelComidaZonaComer" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelExteriorColonia" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelHormigasAlmacen" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelHormigasBuscandoComida" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelHormigasDescansando" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelHormigasHaciendoInstruccion" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelHormigasLlevandoComida" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelHormigasRepeliendoInsecto" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelInteriorColonia" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelRefugio" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabelZonaComer" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextFieldComidaAlmacen" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldComidaZonaComer" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldHormigasAlmacen" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldHormigasBuscandoComida" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldHormigasDescansando" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldHormigasHaciendoInstruccion" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldHormigasLlevandoComida" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldHormigasRepeliendoInsecto" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldRefugio" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextFieldZonaComer" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButtonDetenerActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonReanudarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonGenerarAmenazaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Interfaz" package="" visibility="public" xPosition="100.0" yPosition="1000.0">
+      <Methods>
+        <Method name="getNumObrerasExterior" returnType="int" visibility="package"/>
+        <Method name="getNumObrerasInterior" returnType="int" visibility="package"/>
+        <Method name="getNumSoldadoInstruccion" returnType="int" visibility="package"/>
+        <Method name="getNumSoldadoRepeliendoInvasion" returnType="int" visibility="package"/>
+        <Method name="getNumCriasZonaComer" returnType="int" visibility="package"/>
+        <Method name="getNumCriasRefugio" returnType="int" visibility="package"/>
+        <Method name="generarInsectoInvasor" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="HormigaObrera" target="Hormiga"/>
+    <UseRelation source="ListaThreads" target="HormigaSoldado" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Hormiga" target="Colonia" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c" source="Hormiga" target="Colonia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paso" source="Hormiga" target="Paso" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Colonia" target="HormigaSoldado" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Colonia" target="HormigaObrera" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Implementacion" target="Interfaz"/>
+    <UseRelation source="Colonia" target="ListaThreads" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ListaThreads" target="HormigaCria" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Colonia" target="HormigaCria" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaHormigasSoldado" source="Colonia" target="HormigaSoldado" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;HormigaSoldado&gt;"/>
+    <HasRelation name="genLog" source="Servidor" target="GeneradorLog" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="HormigaSoldado" target="Hormiga"/>
+    <HasRelation name="impl" source="Servidor" target="Implementacion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="lista" source="ListaThreads" target="Hormiga" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Hormiga&gt;"/>
+    <HasRelation name="c" source="Servidor" target="Colonia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaHormigasBuscandoComida" source="Colonia" target="ListaThreads" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ListaThreads"/>
+    <UseRelation source="ListaThreads" target="HormigaObrera" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paso" source="Servidor" target="Paso" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Hormiga" target="Paso" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="generadorLog" source="Colonia" target="GeneradorLog" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Colonia" target="Hormiga" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="colonia" source="Implementacion" target="Colonia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="HormigaCria" target="Hormiga"/>
+    <HasRelation name="listaHormigasCria" source="Colonia" target="HormigaCria" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;HormigaCria&gt;"/>
+    <HasRelation name="interfaz" source="Cliente" target="Interfaz" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

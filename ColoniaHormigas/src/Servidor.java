@@ -49,7 +49,7 @@ public class Servidor extends javax.swing.JFrame {
             int numHormigas = 0;
             @Override
             public void run() {
-                while (numHormigas < 30) {
+                while (numHormigas < 10000) {
                 try {
                 HormigaObrera ho1 = new HormigaObrera(numObrera, c, paso);
                 ho1.start();
