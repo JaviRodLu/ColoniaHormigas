@@ -7,6 +7,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextField;
 
+/**
+ * Esta clase contiene todos los recursos compartidos a los que accederán 
+ * todas las hormigas que se crean desde el Servidor.
+ */
+
 public class Colonia {
     GeneradorLog generadorLog;
     Random r = new Random();

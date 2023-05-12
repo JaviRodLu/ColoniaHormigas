@@ -1,17 +1,20 @@
 import java.io.IOException;
-import java.util.Random;
 
 /**
  * HORMIGA OBRERA
  * Llegarán a la colonia.
  * Entonces, si su número es impar, saldrán al exterior a recoger 
- * cinco elementos de comida, tardando en ello 
- * 
+ * cinco elementos de comida, tardando en ello cuatro segundos, 
+ * volverán a la colonia y los depositarán en el almacén.
+ * En cambio, si su número es par, accederán al almacén
+ * a recoger cinco elementos de comida para llevarlos a la zona de comer.
+ * Tras hacer estas actividades diez veces, irán a alimentarse a la zona de comer
+ * y posteriormente a descansar 1 segundo en la zona de descanso.
+ * A continuación, iniciarán de nuevo este comportamiento, el cual repetirán
+ * indefinidamente.
  */
 
 public class HormigaObrera extends Hormiga {
-    Random r = new Random();
-
     public HormigaObrera(int num, Colonia colonia, Paso paso) {
         super(num, colonia, paso);
         if (num < 10) {
